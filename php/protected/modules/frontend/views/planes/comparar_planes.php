@@ -1,0 +1,1 @@
+<?php echo $this->renderPartial('_comparador',array('publicacion1'=>$publicacion1,'publicacion2'=>$publicacion2,'publicacion3'=>$publicacion3 )); ?>

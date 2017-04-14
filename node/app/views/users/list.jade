@@ -1,0 +1,20 @@
+extends ../layouts/default
+
+block content
+	h2 Usuarios
+
+	table.table
+		th Documento
+		th Nombre
+		th Sexo
+		th Email
+		th Nivel
+
+		-if (allUsers.length)
+			- each user in allUsers
+				tr
+					td= user.numeroDocumento
+					td= user.nombre
+					td= user.sexo
+					td= user.email
+					td(style="text-transform: capitalize")= user.nivel

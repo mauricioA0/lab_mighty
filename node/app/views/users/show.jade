@@ -1,0 +1,6 @@
+extends ../layouts/default
+
+block main
+  - var name = user.nombre ? user.nombre : user.username
+
+  h1= name

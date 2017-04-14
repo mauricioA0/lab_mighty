@@ -1,0 +1,69 @@
+extends auth
+
+block auth
+  form.form-horizontal.form-signin(action="/users", method="post", role="form")
+    input(type='hidden', name='_csrf', value="#{csrf_token}")
+
+    .row
+      .col-lg-6
+        .form-group
+          label#documento.control-label.col-sm-4(for="documento") Documento
+          .col-sm-8.row
+            .col-sm-3
+              select#tipoDocumento.form-control(name="tipoDocumento")
+                option(value="1") 1
+                option(value="2") 2
+            .col-sm-9.row
+              input#numeroDocumento.form-control(type="text", name="numeroDocumento")
+
+        .form-group
+          label.control-label.col-sm-4(for="nombre") Nombre
+          .col-sm-8
+            input#nombre.form-control(type='text', name="nombre", placeholder='Nombre', value=user.nombre)
+
+        .form-group
+          label.control-label.col-sm-4(for="email") Email
+          .col-sm-8
+            input#email.form-control(type='text', name="email", placeholder='Email', value=user.email)
+
+        .form-group
+          label.control-label.col-sm-4(for="sexo") Sexo
+          .col-sm-8
+            label.radio-inline
+              input#sexo(value="M" type="radio" name="sexo") 
+              | M
+            label.radio-inline
+              input#sexo(value="F" type="radio" name="sexo") 
+              | F
+
+        .form-group
+          label.control-label.col-sm-4(for="fechaNacimiento") Fecha Nacimiento
+          .col-sm-8
+            input#fechaNacimiento.form-control(type="date")
+
+        .form-group
+          label.control-label.col-sm-4(for="nivel") Nivel
+          .col-sm-8
+            select#nivel.form-control(name="nivel")
+              option(value="administrador") Administrador
+              option(value="gerente") Gerente
+              option(value="operador") Operador
+              option(value="supervisor") Supervisor
+              option(value="vendedor") Vendedor
+
+        .form-group
+          label.control-label.col-sm-4(for="nombreUsuario") Nombre Usuario
+          .col-sm-8
+            input#nombreUsuario.form-control(type='text', name="nombreUsuario", placeholder='Nombre usuario', value=user.nombreUsuario)
+
+        .form-group
+          label.control-label.col-sm-4(for="password") Contraseña
+          .col-sm-8
+            input#password.form-control(type='password', name="password", placeholder='Contraseña')
+
+    .row
+      .col-lg-6.text-center
+        button.btn.btn-primary(type='submit') Sign up
+        br
+        br
+        a.show-login(href="/login") Log in

@@ -1,0 +1,122 @@
+extends ../layouts/default
+
+block content
+
+	span.text-center
+		h2 Busqueda 
+
+	form
+		.col-lg-6
+			.form-horizontal
+				.form-group
+					label.control-label.col-sm-3(for="nombre") Nombre
+					.col-sm-9
+						input#nombre.form-control(type="text", placeholder="Nombre")
+
+				.form-group
+					label.control-label.col-sm-3(for="localidad") Localidad
+					.col-sm-9
+						input#localidad.form-control(type="text", placeholder="Localidad")
+
+				.form-group
+					label.control-label.col-sm-3(for="concesionario") Concesionario
+					.col-sm-9
+						select#concesionario.form-control(name="")
+							option(value="") Margian B
+							option(value="") Le Meridian
+
+				.form-group
+					label.control-label.col-sm-3(for="dia") Desde
+					.col-sm-9
+						.form-group.col-sm-4
+							select#dia.form-control(name="")
+								option(value="") 01
+								option(value="") 02
+								option(value="") 03
+								option(value="") 04
+						.form-group.col-sm-4
+							select#mes.form-control.col-sm-4(name="")
+								option(value="") Enero
+								option(value="") Febrero
+								option(value="") Marzo
+								option(value="") Abril
+						.form-group.col-sm-4
+							select#anio.form-control.col-sm-3(name="")
+								option(value="") 2010
+								option(value="") 2011
+								option(value="") 2012
+								option(value="") 2013
+
+				.form-group
+					label.control-label.col-sm-3 Estado de la consulta
+					.col-sm-9
+						.col-sm-6
+							.radio
+								label 
+									input(type="radio", name="estado")
+									| Vendidas
+							.radio
+								label
+									input(type="radio", name="estado")
+									| Descartadas
+
+							.radio
+								label
+									input(type="radio", name="estado")
+									| Irrelevantes
+						.col-sm-6
+							.radio
+								label
+									input(type="radio", name="estado")
+									| En Proceso
+
+							.radio
+								label
+									input(type="radio", name="estado")
+									| Sin atender
+
+							.radio
+								label
+									input(type="radio", name="estado")
+									| Cualquiera
+
+		.col-lg-6
+			.form-horizontal
+				.form-group
+					label.control-label.col-sm-3(for="email") Email
+					.col-sm-9
+						input#email.form-control(type="email", placeholder="Email")
+
+				.form-group
+					label.control-label.col-sm-3(for="provincia") Provincia
+					.col-sm-9
+						input#provincia.form-control(type="email", placeholder="Provincia")
+
+				.form-group
+					label.control-label.col-sm-3(for="vendedores") Vendedores
+					.col-sm-9
+						select#vendedores.form-control(name="", disabled)
+
+				.form-group
+					label.control-label.col-sm-3(for="dia") Hasta
+					.col-sm-9
+						.form-group.col-sm-4
+							select#dia.form-control(name="")
+								option(value="") 01
+								option(value="") 02
+								option(value="") 03
+								option(value="") 04
+						.form-group.col-sm-4
+							select#mes.form-control.col-sm-4(name="")
+								option(value="") Enero
+								option(value="") Febrero
+								option(value="") Marzo
+								option(value="") Abril
+						.form-group.col-sm-4
+							select#anio.form-control.col-sm-3(name="")
+								option(value="") 2010
+								option(value="") 2011
+								option(value="") 2012
+								option(value="") 2013
+		.col-lg-12.text-center
+			button.btn.btn-primary.btn-lg(type="submit") Buscar

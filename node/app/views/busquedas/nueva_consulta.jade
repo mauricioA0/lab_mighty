@@ -1,0 +1,103 @@
+extends ../layouts/default
+
+block content
+
+	span.text-center
+		h2 Nueva consulta
+
+	form
+		.col-lg-6
+			.form-horizontal
+				.form-group
+					label.control-label.col-sm-4(for="nombreapellido") Nombre y Apellido
+					.col-sm-8
+						input#nombreapellido.form-control(type="text", placeholder="Nombre y apellido")
+
+				.form-group
+					label.control-label.col-sm-4(for="email") Email
+					.col-sm-8
+						input#email.form-control(type="text", placeholder="Email")
+
+				.form-group
+					label.control-label.col-sm-4(for="telefonoopcional") Telefono Opcional
+					.col-sm-8
+						input#telefonoopcional.form-control(type="text", placeholder="Telefono Opcional")
+
+				.form-group
+					label.control-label.col-sm-4(for="concesionaria") Concesionaria
+					.col-sm-8
+						select#concesionaria.form-control(type="text", placeholder="Concesionaria")
+							option(value="") Margian B
+							option(value="") Le Meridien
+
+				.form-group
+					label.control-label.col-sm-4(for="mensaje") Mensaje
+					.col-sm-8
+						textarea#mensaje.form-control(placeholder="Mensaje")
+
+				.form-group
+					label.control-label.col-sm-4(for="") Seleccione
+					.col-sm-8
+						.col-sm-6
+							.radio
+								label
+									input(type="radio" name="contacto")
+									| 0810
+							.radio
+								label
+									input(type="radio" name="contacto")
+									| Cel 0351
+							.radio
+								label
+									input(type="radio" name="contacto")
+									| Cel 0341
+							.radio
+								label
+									input(type="radio" name="contacto")
+									| WP
+						.col-sm-6
+							.radio
+								label
+									input(type="radio" name="contacto")
+									| Facebook
+							.radio
+								label
+									input(type="radio" name="contacto")
+									| GPlus
+							.radio
+								label
+									input(type="radio" name="contacto")
+									| Preatencion
+
+		.col-lg-6
+			.form-horizontal
+				.form-group
+					label.control-label.col-sm-4(for="provincia") Provincia
+					.col-sm-8
+						input#provincia.form-control(type="text", placeholder="Provincia")
+
+				.form-group
+						label.control-label.col-sm-4(for="telefono") Telefono
+						.col-sm-8
+							input#telefono.form-control(type="text", placeholder="Telefono")
+
+				.form-group
+						label.control-label.col-sm-4(for="modelo") Modelo
+						.col-sm-8
+							select#modelo.form-control(type="text", placeholder="Modelo" disabled)
+
+				.form-group
+					label.control-label.col-sm-4(for="estado") Estado
+					.col-sm-8
+						select#estado.form-control(type="text", placeholder="Estado")
+							option(value="") Nuevo
+							option(value="") Adjudicado
+							option(value="") Comenzado
+
+				.form-group
+					label.control-label.col-sm-4(for="estado") Vendedores
+					.col-sm-8
+						select#vendedores.form-control(type="text", placeholder="Vendedores" disabled)
+
+		.col-lg-12.text-center.clearfix
+			button.btn.btn-primary.btn-lg(type="submit") Cargar

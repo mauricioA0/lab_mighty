@@ -1,0 +1,178 @@
+<?php
+
+// uncomment the following to define a path alias
+// Yii::setPathOfAlias('local','path/to/local-folder');
+
+// This is the main Web application configuration. Any writable
+// CWebApplication properties can be configured here.
+Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
+
+return array(
+	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+	'name'=>'autosencuotas',
+    'language' => 'es',
+    'charset'=>'utf-8',
+    'defaultController' => 'frontend/home/index',
+    'theme'=>'bootstrap',
+
+    'preload'=>array('log'),
+    'theme'=>'abound',
+
+	// autoloading model and component classes
+	'import'=>array(
+		'application.models.*',
+		'application.components.*',
+        'zii.behaviors.CTimestampBehavior',
+	),
+
+	'modules'=>array(
+        'frontend',
+        'backend',
+        'gii'=>array(
+            'generatorPaths'=>array(
+                'bootstrap.gii',
+            ),
+            'class'=>'system.gii.GiiModule',
+            'password'=>'4ut0s',
+            'ipFilters'=>array('127.0.0.1','::1'),
+        ),
+    ),
+
+	// application components
+	'components'=>array(
+
+		'user'=>array(
+            'allowAutoLogin'=>true,
+        ),
+        'bootstrap'=>array(
+            'class'=>'bootstrap.components.Bootstrap',
+        ),
+
+
+        //Componente para detectar la url del sitio
+        'urlSite'=>array(
+            'class'=>'UrlRouterDominio',
+        ),
+
+
+        'request'=>array(
+            'enableCookieValidation'=>true,
+        ),
+
+
+        'urlManager'=>array(
+            'urlFormat'=>'path',
+            'showScriptName' => false,
+            'rules'=>array(
+
+
+
+
+                ##ESTATICAS
+                'quienes-somos'              => 'frontend/estaticas/Empresa',
+                'legales'                    => 'frontend/estaticas/terminosCondiciones',
+                'preguntas-frecuentes'       => 'frontend/estaticas/preguntasFrecuentes',
+                'redes-sociales'             => 'frontend/estaticas/redesSociales',
+                'contacto-administrativo'    => 'frontend/estaticas/contactoAdministrativo',
+                'vender-mi-plan'             => 'frontend/estaticas/venderPlan',
+                'trabaja-con-nosotros'       => 'frontend/estaticas/trabajaNosotros',
+                'contacto-ok'                => 'frontend/default/contactoOk',
+                'enviar-consulta'            => 'frontend/planes/enviarConsultas',
+
+
+                ##CARGAS Y MIGRACIONES
+                'comenzar-Raty'              => 'frontend/default/cargarRatyInicial',
+
+
+                ##ERRORES
+                'error-404'                  => 'frontend/default/error404',
+
+
+                ##AJAX
+                'ajax-adjudicados-gal'       => 'frontend/planes/ajaxAdjudicadosGalPartial',
+                'ajax-adjudicados-list'      => 'frontend/planes/ajaxAdjudicadosListPartial',
+                'ajax-comenzados-gal'        => 'frontend/planes/ajaxComenzadosGalPartial',
+                'ajax-comenzados-list'       => 'frontend/planes/ajaxComenzadosListPartial',
+                'ajax-nuevos-gal'            => 'frontend/planes/ajaxNuevosGalPartial',
+                'ajax-nuevos-lista'          => 'frontend/planes/ajaxNuevosListaPartial',
+                'ajax-planesmarca-gal'       => 'frontend/planes/ajaxPlanesMarcasGalPartial',
+                'ajax-planesmarca-lista'     => 'frontend/planes/ajaxPlanesMarcasListaPartial',
+                'ajax-consultas'             => 'frontend/planes/ajaxEnviarConsultasModal',
+                'ajax-enviar-consulta'       => 'frontend/planes/ajaxEnviarConsultas',
+                'ajax-votacion'              => 'frontend/modelo/ajaxVotacion',
+                'ajax-votacion-raty'         => 'frontend/modelo/ajaxVotacionRaty',
+               // 'ajax-update-consultas'      => 'frontend/planes/ajaxUpdateEnviarConsulta',
+
+
+                ##BACKEND
+                'backend'                                       => 'backend/default/login',
+                'logout'                                        => 'backend/default/logout',
+                'backend/<controller:\w+>/<id:\d+>'             =>'backend/<controller>/view',
+                'backend/<controller:\w+>/<action:\w+>/<id:\d+>'=>'backend/<controller>/<action>',
+                'backend/<controller:\w+>/<action:\w+>'         =>'backend/<controller>/<action>',
+
+
+                ## FRONTEND
+                ''                                          => 'frontend/home/index',
+                'planes-de-ahorro'                          => 'frontend/planes/planesAhorro',
+                'planes-adjudicados'                        => 'frontend/planes/planesAdjudicados',
+                'planes-empezados'                          => 'frontend/planes/planesComenzados',
+                'planes-nuevos'                             => 'frontend/planes/planesNuevos',
+                'planes-utilitarios'                        => 'frontend/planes/planesUtilitarios',
+                'planes-economicos'                         => 'frontend/planes/planesEconomicos',
+                'planes-detalle-reventa'                    => 'frontend/planes/planesDetalleReventa',
+                'comparar-planes'                           => 'frontend/planes/comparadorPlanes',
+                //'<slug>'                                    => 'frontend/planes/planesMarcas',
+                //'<marcaplan>/<slug>/plan-de-ahorro/<plan>'  => 'frontend/planes/planesDetalle',
+            ),
+        ),
+
+
+		'db'=>array(
+			'connectionString' => 'mysql:host=localhost;dbname=delivery_lee',
+			'emulatePrepare' => true,
+			'username' => 'root',
+			'password' => '',
+			'charset' => 'utf8',
+		),
+
+		'errorHandler'=>array(
+            'errorAction'=>'frontend/default/error404',
+        ),
+
+        'log'=>array(
+            'class'=>'CLogRouter',
+            'routes'=>array(
+                array(
+                    'class'=>'CFileLogRoute',
+                    'levels'=>'error',
+                    'logFile'=>'error.log',
+                ),
+                array(
+                    'class'=>'CFileLogRoute',
+                    'levels'=>'info',
+                    'logFile'=>'info.log',
+                ),
+                array(
+                    'class'=>'CFileLogRoute',
+                    'levels'=>'warning',
+                    'logFile'=>'warning.log',
+                ),
+                array(
+                    'class'=>'CPhpMailerLogRoute',
+                    'levels'=>'error, warning, info',
+                    'emails'=>'webmaster@example.com',  //a este email se envian los diferentes niveles
+                    'except'=>'exception.CHttpException.404',
+                ),
+            ),
+        ),
+	),
+
+	// application-level parameters that can be accessed
+	// using Yii::app()->params['paramName']
+	'params'=>array(
+		// this is used in contact page
+		'adminEmail'=>'webmaster@example.com',
+        'valorMax'  =>'260000',
+	),
+);

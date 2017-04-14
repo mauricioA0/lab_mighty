@@ -1,0 +1,9 @@
+extends ../layouts/default
+
+block content
+	- if (marcas.length)
+		- each marca in marcas
+			h3= marca.nombre
+
+	- else
+		a(href="/marcas/nuevo") Crear marca

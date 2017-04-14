@@ -1,0 +1,675 @@
+$blanco: #f0f1f4
+$azulLindo: #0091EA
+$rojo: #e74c3c
+$verde: #4CAF50 
+$gris: #c3c3c3
+$otroGris: #999999
+
+body
+	font-family: 'Montserrat' , sans-serif !important
+
+div#item-info-content
+	padding-right: 0px
+
+.item-central-index
+	border-radius: 5px 5px 0px 0px
+.item-central-index div, #item-photo-content
+	padding: 0px
+
+.nuevoModelo
+	position: absolute
+	top: -5px
+	right: -10px
+	background-color: #4CAF50
+	color: #fff
+	width: 60px
+	border-radius: 50%
+	overflow: hidden
+	line-height: 60px
+	text-align: center
+	font-size: 12px
+	text-transform: uppercase
+
+main
+	background: #FFFFFF 100% 0 no-repeat fixed
+    
+section#logoContainer
+	background-color: #fff
+    
+
+
+/* Owl*/
+#item-photo-content .owl-prev, #item-photo-content .owl-next
+	padding: 30px 10px
+	border-color: #ddd
+	border-width: 1px
+	border-style: solid
+	overflow: hidden
+	color: #323232
+	width: 30px
+	text-align: center
+	&:hover
+		-webkit-transition: all 0.2s ease-in-out
+		-moz-transition: all 0.2s ease-in-out
+		-ms-transition: all 0.2s ease-in-out
+		-o-transition: all 0.2s ease-in-out
+		transition: all 0.2s ease-in-out
+		background-color: #333
+		color: #fff
+
+#item-photo-content .owl-next
+	position: absolute
+	right: 0px
+	top: 0px
+
+#item-photo-content .owl-prev
+	position: absolute
+	left: 0px
+	top: 0px 
+.border-color
+	border-color: #cccccc
+
+.padding-small-item
+	padding: 20px
+.item-central-index, .item-video
+	border: 1px solid #cccccc
+	margin-top: 10px
+	overflow: hidden
+.item-video
+	background-color: #fff
+.border-bottom
+	border-color: #cccccc
+
+.tiny-padding
+	padding: 5px 0 !important
+
+/* breadcrumb */
+#breadcrumb
+	padding: 0px
+	margin-top: 20px
+	ul.breadcrumb
+		padding: 15px !important
+		margin-bottom: 10px !important
+		list-style: none !important
+		background-color: #f4f4f4 !important
+		border-radius: 0 !important
+		overflow: hidden !important
+		border: 1px solid #ddd !important
+		li a
+			color: #323232
+
+ul.ul-star
+	li
+		float: left
+		list-style: none
+ul.ul-star
+	li i
+		font-size: 20px
+		margin-right: 5px
+
+
+/* circulo */
+.circulo
+	background-color: $blanco
+	border-radius: 50px
+	color: #abbbbb
+	padding: 10px
+
+	&:hover
+		background-color: $azulLindo
+		color: #fff
+		cursor: pointer
+		text-decoration: none
+
+/* shared */
+#shared
+	background-color: $blanco
+	width: 100%
+	float: left
+	padding: 10px 15px !important
+	margin-top: 10px
+.shared
+	background-color: $blanco
+	float: left
+	padding: 10px 15px !important
+	margin-top: 10px 
+	margin: 10px
+
+
+#item-photo-content 
+	.owl-stage-outer
+		max-width: 370px
+		margin-left: 35px
+		box-shadow: 0px 1px 1px 0px rgba(0,2,46,0.1)
+.item-central-index
+	background-color: #fff
+
+li.list-img-carousel a img 
+	max-width: 85px
+
+.border
+	text-align: center
+	i
+		background-color: $azulLindo
+		border-radius: 50px
+		color: #fff
+		padding: 10px
+		width: 35px
+		width: 35px
+		margin-bottom: 10px
+		cursor: pointer
+
+		&.fa-thumbs-up:hover
+			background-color: green
+		&.fa-thumbs-down:hover
+			background-color: $rojo
+
+		
+
+
+
+/* info modelo */
+
+.top-info-item
+	border-bottom: 1px solid #ddd
+	img
+		position: absolute
+		right: 0px
+		top: -30px
+
+.item-info-content
+	padding: 20px
+	text-align: justify
+	margin: 20px
+	border: 1px solid $otroGris
+#valorCuota-item
+	.superMorocha
+		font-size: 18px
+ul#personal-social-item
+	width: 100%
+	display: flex
+	align-items: center
+	align-content: center
+	justify-content: center
+	padding: 0px
+	li
+		padding: 0 10px
+		text-align: center
+		float: left
+		
+	li span.none
+		display: none
+div#plan
+	h1
+		margin: 10px
+		font-size: 22px
+
+.margin-15
+	margin: 15px
+
+	span.price
+		font-size: 35px
+		color: #323232
+		text-align: right
+		float: right
+		margin-right: 15px
+
+p.financiado
+	color: #a9a9a9
+	font-size: 12px
+	font-weight: normal
+
+/* rating */
+
+.rating
+	unicode-bidi: bidi-override
+	direction: rtl
+	font-size: 20px
+	span
+		display: inline-block
+		position: relative
+		width: 1.1em
+.rating > span:hover:before,
+.rating > span:hover ~ span:before 
+	content: "\2605"
+	position: absolute
+	cursor: pointer
+	color: gold
+
+
+
+/* tabs */
+#tabs
+	background-color: #fff
+
+/* tabs ul-class */
+div#content-info-plan
+	padding-top: 0px
+	padding-bottom: 5px
+	border-radius: 5px 5px 0px 0px
+	box-shadow: 0px 1px 1px 0px rgba(0,2,46,0.1)
+	min-height: 663px
+ul.ul-class
+	width: 100%
+	overflow: hidden
+	padding: 0
+
+	li
+		text-align: center
+		border-bottom: 8px solid $azulLindo
+		padding: 20px 10px 15px
+		color: #34495e
+		cursor: pointer
+
+.active-link 
+	color: #fff !important
+	background-color: $azulLindo
+
+/* form asesor */
+#formulario
+	padding: 20px
+	float: left
+	select
+		&.inputCiudad
+			margin: 10px 0
+	textarea
+		&#mensaje
+			margin: 10px 0
+
+/* ul class ficha */
+
+.ul-class-ficha
+	padding: 0px
+	border-bottom: 8px solid #3498DB
+	cursor: pointer
+	overflow: hidden
+	li
+		padding: 20px
+		text-align: center
+
+/* form item */
+textarea#textarea
+	padding: 10px 10px 20px
+
+#btnSend
+	margin: 10px 0
+	background-color: #e74c3c
+	color: #fff
+	padding: 15px 25px
+	float: right
+.input-group
+	margin: 10px 0
+
+/* video y beneficios */
+.titulo-h3
+	font-size: 20px
+	padding-bottom: 20px
+
+/* valor de cuotas */
+
+.valorCuotasContenedor
+	border: 1px solid #ECF0F1
+	margin: 10px
+
+.even, .odd, #precioOnline
+	padding: 10px 10px
+	margin: 0 0 0 0 !important
+
+	
+.odd
+	background-color: #ECF0F1
+	
+.alicuota
+	border-top: 1px solid #BDC3C7
+	background-color: #3498DB
+	padding: 10px
+	width: 100%
+	float: left
+	color: #fff
+.pCuotas
+	float: right
+
+#ahorra
+	background-color: #1ABC9C
+	padding: 10px
+	color: #fff
+	text-align: center
+	font-size: 20px
+	#aclaracionAhorra
+		display: block
+		font-size: 13px
+
+#precioRegular, #precioRegular .pCuotas
+	text-decoration: line-through
+	color: $otroGris
+	font-size: 12px
+span#preOnline
+	display: block
+
+
+
+#listadoBeneficios
+	padding: 10px
+
+	.textoBeneficios
+		margin-bottom: 10px
+
+		i
+			width: 20px
+			height: 20px
+			border-radius: 50px
+			color: #fff
+			background-color: $verde
+			text-align: center
+			line-height: 20px
+			font-size: 12px
+			float: left
+
+	.textoBeneficios p
+		float: none
+		text-indent: 0.7em
+		line-height: 25px
+
+.border-bottom
+	border-bottom: 1px solid $gris
+	margin-bottom: 10px
+	overflow: hidden
+/* pagos */
+
+.medios-de-pago
+	padding: 15px 20px !important
+	margin: 20px 0px 10px
+
+.pagos
+	align-items: center
+	align-content: center
+	display: flex
+	width: 100%
+	padding-top: 20px !important
+	justify-content: center
+
+	h5
+		margin-right: 20px
+		color: $otroGris
+	span
+		margin: 0px 8px 4px 4px
+		display: inline-block
+		vertical-align: middle
+
+.payments-medium
+	background: url('http://resources.mlstatic.com/payment-logos/payment-logos-mla-medium_v_9675c12b4e.png')
+
+._pagofacil-medium
+	width: 26px
+	height: 26px
+	background-position: left 0
+._rapipago-medium
+	width: 76px
+	height: 14px
+	background-position: left -296px
+._bapropagos-medium
+	width: 62px
+	height: 15px
+	background-position: left -442px
+
+/* Asesores */ 
+div#asesoresOnline
+	h5
+		color: $verde
+		i
+			color: $verde
+			margin-right: 5px
+	ul
+		li
+			
+			background-color: #f9f9f9
+			color: #323232
+			border-bottom: 1px solid $otroGris
+
+			i
+				background-color: $verde
+				padding: 10px
+				font-size: 20px
+				width: 40px
+				height: 40px
+				text-align: center
+				margin-right: 20px
+				color: #fff
+
+
+/* Relacionados */
+
+#relacionados
+	padding: 0px
+
+#relacionados .ul-item-relacionados, #relacionados .ul-item-relacionados li
+	padding: 0px
+
+#relacionados .owl-controls .owl-nav .owl-prev, #relacionados .owl-controls .owl-nav .owl-next
+	border-radius: 50%
+	border: 2px solid $gris
+	width: 36px
+	height: 36px
+	padding: 0
+	text-align: center
+	line-height: 30px
+	font-size: 20px
+	color: $gris
+
+	&:hover
+		border: 2px solid #000
+		color: #000
+
+.box-links
+	padding: 0px
+	width: 100% 
+	display: flex
+	justify-content: center
+
+	li
+		float: left
+		width: 50px
+		zoom: 1
+		text-align: center
+		border-right: 1px solid #d7d7d7
+	a
+		color: #323232
+		span
+			display: none
+
+h3.item-relacionado-small
+	font-size: 15px
+	float: left
+	max-width: 190px
+	color: #323232
+
+.bloque-item-relacionado
+	padding: 0px !important
+	i
+		float: right
+		line-height: 55px
+		color: $otroGris
+
+.item-relacionados
+	min-height: 330px
+	height: 330px
+	&:hover
+		border: 1px solid #d7d7d7
+		box-shadow: 0px 3px 2px 0px #efefef
+		width: 100%
+	
+.item-relacionados img
+	max-width: 180px
+	margin: 0px auto
+	padding: 0
+
+.contenedor-img-item-relacionados
+	background-color: #f9f9f9
+	padding: 20px 0
+	margin-bottom: 10px
+
+.item-recomendado-valor
+	color: #323232
+	font-size: 20px
+	text-align: right
+
+.item-recomendado-tipoPlan
+	float: left
+	font-size: 12px
+	line-height: 30px
+	color: $otroGris
+
+.owl-controls
+	overflow: hidden
+	display: flex
+	align-items: center
+	align-content: center
+	justify-content: center
+
+.owl-dot
+	background-color: $gris
+	border: 1px solid #B5B4B4
+	width: 10px
+	height: 10px
+	border-radius: 50%
+	float: left
+	margin: 20px 5px
+
+	&.active
+		background-color: $azulLindo
+
+
+
+/* Ficha */ 
+#ficha, #equipamiento
+	h5
+		font-weight: 900
+		padding: 10px
+		float: left
+	li
+		float: left
+		width: 100%
+	&.valorCuotasContenedor
+		margin: 0px !important
+
+#ficha 
+	li
+		span.valorFicha
+			float: right
+
+.colorcitos
+	width: 100%
+	height: 30px
+	border: 1px solid #ccc
+	
+/* tags */
+.tag
+	border-top: 1px solid #dddddd
+	margin-top: 30px
+	h3
+		font-size: 15px
+
+#tags
+	padding: 10px 0
+
+.tags
+	float: left
+	background-color: #eee
+	padding: 1px 10px
+	border-radius: 5px
+	margin: 0px 10px 10px 0
+	
+.addto
+	color: #778888
+
+/* compartir modelo*/
+
+#compartir
+	width: 100%
+	border-top: 1px solid #abbbbb
+	padding-top: 10px
+	margin-top: 20px
+	ul
+		&#ul-list
+			width: 100%
+			float: left
+			li
+				float: left
+				padding: 10px
+			&:hover
+				cursor: pointer
+	#sharedLink, #sharedToFriend
+		width: 100%
+		float: left
+		margin-bottom: 20px
+		padding: 10px
+	#sharedToFriend
+		form
+			&#form-mail
+				input, textarea
+					margin-bottom: 10px
+.btn-enviar
+	outline: none
+	border: none
+	padding: 10px 30px
+	color: #fff
+	background-color: $verde
+	&:hover
+		background-color: #00695C
+
+
+.plan
+	padding: 5px 10px
+	color: white
+	width: 100%
+	margin-bottom: 10px
+	p
+		padding: 0
+		margin-bottom: 0
+
+.plan-setenta
+	background-color: #2db069
+.plan-cien
+	background-color: #9DCB42
+.plan-setentacinco
+	background-color: #2db069
+.plan-sesenta
+	background-color: #2E7D32
+
+/* adjudicados comenzados */
+
+#referenciaDetalle
+	width: 100%
+
+
+.marcaAdj
+	padding: 10px 0 0 0 !important
+	float: left
+
+.adcom-h1 h1
+	margin: 0
+
+p.estadoH1
+	font-size: 18px
+p.nombreH1
+	font-size: 25px
+
+div#valorCuota-item
+	text-align: center
+
+div#content-info-plan-adcom
+	padding-top: 0px
+	padding-bottom: 5px
+	border-radius: 5px 5px 0px 0px
+	box-shadow: 0px 1px 1px 0px rgba(0, 2, 46, 0.1)
+	min-height: 560px
+
+.top-info-item-ad
+	border-bottom: 1px solid #ddd
+	img
+		position: absolute
+		right: 0px
+		top: 0px
+
+
+		

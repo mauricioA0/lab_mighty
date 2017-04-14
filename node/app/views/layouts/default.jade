@@ -1,0 +1,84 @@
+doctype html
+//if IE 8
+  html.ie8.no-js(lang='en')
+//if IE 9
+  html.ie9.no-js(lang='en')
+// [if !IE] <!
+html(lang='en')
+  // <![endif]
+  include ../includes/head.jade
+  body.page-header-fixed.page-sidebar-closed-hide-logo.page-content-white
+    .page-wrapper
+      include ../includes/header.jade
+      // BEGIN HEADER & CONTENT DIVIDER
+      .clearfix
+      // END HEADER & CONTENT DIVIDER
+      // BEGIN CONTAINER
+      .page-container
+        // BEGIN SIDEBAR
+        include ../includes/sidebar.jade
+        // END SIDEBAR
+        // BEGIN CONTENT
+        .page-content-wrapper
+          // BEGIN CONTENT BODY
+          .page-content
+            // BEGIN PAGE HEADER
+            // BEGIN THEME PANEL
+            include ../includes/theme_panel.jade
+            // END THEME PANEL
+            // BEGIN PAGE BAR
+            .page-bar
+              ul.page-breadcrumb
+                li
+                  a(href='index.html') Home
+                  i.fa.fa-circle
+                li
+                  span Dashboard
+              .page-toolbar
+                #dashboard-report-range.pull-right.tooltips.btn.btn-sm(data-container='body', data-placement='bottom', data-original-title='Change dashboard date range')
+                  i.icon-calendar
+                  span.thin.uppercase.hidden-xs  January 30, 2017 - February 28, 2017
+                  i.fa.fa-angle-down
+            // END PAGE BAR
+            // BEGIN PAGE TITLE
+
+            block content
+
+
+          // END CONTENT BODY
+        // END CONTENT
+        // BEGIN QUICK SIDEBAR
+        include ../includes/quick_sidebar.jade
+        // END QUICK SIDEBAR
+      // END CONTAINER
+    include ../includes/footer.jade
+    // BEGIN QUICK NAV
+    nav.quick-nav
+      a.quick-nav-trigger(href='#0')
+        span(aria-hidden='true')
+      ul
+        li
+          a.active(href='https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenimg', target='_blank')
+            span Purchase Metronic
+            i.icon-basket
+        li
+          a(href='https://themeforest.net/item/metronic-responsive-admin-dashboard-template/reviews/4021469?ref=keenimg', target='_blank')
+            span Customer Reviews
+            i.icon-users
+        li
+          a(href='http://keenimg.com/showcast/', target='_blank')
+            span Showcase
+            i.icon-user
+        li
+          a(href='http://keenimg.com/metronic-theme/changelog/', target='_blank')
+            span Changelog
+            i.icon-graph
+      span.quick-nav-bg(aria-hidden='true')
+    .quick-nav-overlay
+    // END QUICK NAV
+    //if lt IE 9
+      script(src='/img/global/plugins/respond.min.js')
+      script(src='/img/global/plugins/excanvas.min.js')
+      script(src='/img/global/plugins/ie8.fix.min.js')
+    // BEGIN CORE PLUGINS
+    script(src='/web/bundle.js')

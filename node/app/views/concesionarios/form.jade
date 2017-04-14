@@ -1,0 +1,62 @@
+// extends form
+extends ../layouts/default
+
+block content
+  - var action = '/concesionarios'
+  - action += concesionario.isNew? '' : '/' + concesionario.id
+
+  h2.text-center Nuevo concesionario
+
+  form.form-horizontal(method="post", action=action, enctype="multipart/form-data", role="form")
+    .row
+      .col-lg-6
+        p= errors
+        input(type="hidden", name="_csrf", value="#{csrf_token}")
+        - if (!concesionario.isNew)
+          input(type="hidden", name="_method", value="PUT")
+        .form-group
+          label.control-label.col-sm-4(for="nombre") Nombre*
+          .col-sm-8
+            input.form-control#nombre(type="text", name="nombre", value=concesionario.nombre)
+
+        .form-group
+          label.control-label.col-sm-4(for="nombreCorto") Nombre Corto*
+          .col-sm-8
+            input#nombreCorto.form-control(type="text", name="nombreCorto", value=concesionario.nombreCorto)
+
+        .form-group
+          label.control-label.col-sm-4(for="marca") Marca*
+          .col-sm-8
+            - if (concesionario.marca)
+              - each key in concesionario.marca
+                span= key.nombre
+            select#marca.form-control(name="marca")
+              - if (marcas)
+                - each marca in marcas
+                    option(value=marca._id)= marca.nombre
+
+        .form-group
+          label.control-label.col-sm-4(for="diaCierre") Dia de cierre
+          .col-sm-8
+            input#diaCierre.form-control(type="number", min="1", max="31", name="diaCierre", value=concesionario.diaCierre)
+        
+        .form-group
+          label.control-label.col-sm-4(for="supervisor") Supervisor
+          .col-sm-8
+            select#supervisor.form-control(name="supervisor")
+              -if (supervisores)
+                - each supervisor in supervisores
+                  option(value=supervisor._id)= supervisor.nombre
+
+        .form-group
+          label.control-label.col-sm-4(for="vendedores") Vendedores
+          .col-sm-8
+            select#vendedores.form-control(name="vendedores", multiple="multiple")
+              -if (vendedores)
+                - each vendedor in vendedores
+                  option(value=vendedor._id)= vendedor.nombre
+
+        //- p Listar los usuarios que tengan jerarquia de vendedor ( las concesionarias pueden tener ilimitados vendedores, los vendedores tienen que tener un porcentaje de asignacion, los vendedores solo pueden vender para una concecionaria)
+
+        .form-group.text-center
+          button.btn.btn-primary(type="submit") Crear

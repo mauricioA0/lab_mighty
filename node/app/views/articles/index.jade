@@ -1,0 +1,2439 @@
+extends ../layouts/default
+
+block main
+  h1= title
+  <h2>HOLA COMO ESTAS  ? </h2>
+block content
+
+  h1.page-title
+    | Admin Dashboard
+    small  statistics, charts, recent events and reports
+  // END PAGE TITLE
+  // END PAGE HEADER
+  // BEGIN DASHBOARD STATS 1
+  .row
+    .col-lg-3.col-md-3.col-sm-6.col-xs-12
+      a.dashboard-stat.dashboard-stat-v2.blue(href='#')
+        .visual
+          i.fa.fa-comments
+        .details
+          .number
+            span(data-counter='counterup', data-value='1349') 0
+          .desc  New Feedbacks
+    .col-lg-3.col-md-3.col-sm-6.col-xs-12
+      a.dashboard-stat.dashboard-stat-v2.red(href='#')
+        .visual
+          i.fa.fa-bar-chart-o
+        .details
+          .number
+            span(data-counter='counterup', data-value='12,5') 0
+            | M$
+          .desc  Total Profit
+    .col-lg-3.col-md-3.col-sm-6.col-xs-12
+      a.dashboard-stat.dashboard-stat-v2.green(href='#')
+        .visual
+          i.fa.fa-shopping-cart
+        .details
+          .number
+            span(data-counter='counterup', data-value='549') 0
+          .desc  New Orders
+    .col-lg-3.col-md-3.col-sm-6.col-xs-12
+      a.dashboard-stat.dashboard-stat-v2.purple(href='#')
+        .visual
+          i.fa.fa-globe
+        .details
+          .number
+            | +
+            span(data-counter='counterup', data-value='89')
+            | %
+          .desc  Brand Popularity
+  .clearfix
+  // END DASHBOARD STATS 1
+  .row
+    .col-lg-6.col-xs-12.col-sm-12
+      // BEGIN PORTLET
+      .portlet.light.bordered
+        .portlet-title
+          .caption
+            i.icon-bar-chart.font-dark.hide
+            span.caption-subject.font-dark.bold.uppercase Site Visits
+            span.caption-helper weekly stats...
+          .actions
+            .btn-group.btn-group-devided(data-toggle='buttons')
+              label.btn.red.btn-outline.btn-circle.btn-sm.active
+                input#option1.toggle(type='radio', name='options')
+                | New
+              label.btn.red.btn-outline.btn-circle.btn-sm
+                input#option2.toggle(type='radio', name='options')
+                | Returning
+        .portlet-body
+          #site_statistics_loading
+            img(src='img/global/img/loading.gif', alt='loading')
+          #site_statistics_content.display-none
+            #site_statistics.chart
+      // END PORTLET
+    .col-lg-6.col-xs-12.col-sm-12
+      // BEGIN PORTLET
+      .portlet.light.bordered
+        .portlet-title
+          .caption
+            i.icon-share.font-red-sunglo.hide
+            span.caption-subject.font-dark.bold.uppercase Revenue
+            span.caption-helper monthly stats...
+          .actions
+            .btn-group
+              a.btn.dark.btn-outline.btn-circle.btn-sm.dropdown-toggle(href='', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                | Filter Range
+                span.fa.fa-angle-down
+              ul.dropdown-menu.pull-right
+                li
+                  a(href='javascript:;')
+                    | Q1 2014
+                    span.label.label-sm.label-default  past
+                li
+                  a(href='javascript:;')
+                    | Q2 2014
+                    span.label.label-sm.label-default  past
+                li.active
+                  a(href='javascript:;')
+                    | Q3 2014
+                    span.label.label-sm.label-success  current
+                li
+                  a(href='javascript:;')
+                    | Q4 2014
+                    span.label.label-sm.label-warning  upcoming
+        .portlet-body
+          #site_activities_loading
+            img(src='img/global/img/loading.gif', alt='loading')
+          #site_activities_content.display-none
+            #site_activities(style='height: 228px;')
+          div(style='margin: 20px 0 10px 30px')
+            .row
+              .col-md-3.col-sm-3.col-xs-6.text-stat
+                span.label.label-sm.label-success  Revenue:
+                h3 $13,234
+              .col-md-3.col-sm-3.col-xs-6.text-stat
+                span.label.label-sm.label-info  Tax:
+                h3 $134,900
+              .col-md-3.col-sm-3.col-xs-6.text-stat
+                span.label.label-sm.label-danger  Shipment:
+                h3 $1,134
+              .col-md-3.col-sm-3.col-xs-6.text-stat
+                span.label.label-sm.label-warning  Orders:
+                h3 235090
+      // END PORTLET
+  .row
+    .col-lg-6.col-xs-12.col-sm-12
+      .portlet.light.bordered
+        .portlet-title.tabbable-line
+          .caption
+            i.icon-bubbles.font-dark.hide
+            span.caption-subject.font-dark.bold.uppercase Comments
+          ul.nav.nav-tabs
+            li.active
+              a(href='#portlet_comments_1', data-toggle='tab')  Pending
+            li
+              a(href='#portlet_comments_2', data-toggle='tab')  Approved
+        .portlet-body
+          .tab-content
+            #portlet_comments_1.tab-pane.active
+              // BEGIN: Comments
+              .mt-comments
+                .mt-comment
+                  .mt-comment-img
+                    img(src='img/pages/media/users/avatar1.jpg')
+                  .mt-comment-body
+                    .mt-comment-info
+                      span.mt-comment-author Michael Baker
+                      span.mt-comment-date 26 Feb, 10:30AM
+                    .mt-comment-text  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    .mt-comment-details
+                      span.mt-comment-status.mt-comment-status-pending Pending
+                      ul.mt-comment-actions
+                        li
+                          a(href='#') Quick Edit
+                        li
+                          a(href='#') View
+                        li
+                          a(href='#') Delete
+                .mt-comment
+                  .mt-comment-img
+                    img(src='img/pages/media/users/avatar6.jpg')
+                  .mt-comment-body
+                    .mt-comment-info
+                      span.mt-comment-author Larisa Maskalyova
+                      span.mt-comment-date 12 Feb, 08:30AM
+                    .mt-comment-text  It is a long established fact that a reader will be distracted.
+                    .mt-comment-details
+                      span.mt-comment-status.mt-comment-status-rejected Rejected
+                      ul.mt-comment-actions
+                        li
+                          a(href='#') Quick Edit
+                        li
+                          a(href='#') View
+                        li
+                          a(href='#') Delete
+                .mt-comment
+                  .mt-comment-img
+                    img(src='img/pages/media/users/avatar8.jpg')
+                  .mt-comment-body
+                    .mt-comment-info
+                      span.mt-comment-author Natasha Kim
+                      span.mt-comment-date 19 Dec,09:50 AM
+                    .mt-comment-text
+                      | The generated Lorem or non-characteristic Ipsum is therefore or non-characteristic.
+                    .mt-comment-details
+                      span.mt-comment-status.mt-comment-status-pending Pending
+                      ul.mt-comment-actions
+                        li
+                          a(href='#') Quick Edit
+                        li
+                          a(href='#') View
+                        li
+                          a(href='#') Delete
+                .mt-comment
+                  .mt-comment-img
+                    img(src='img/pages/media/users/avatar4.jpg')
+                  .mt-comment-body
+                    .mt-comment-info
+                      span.mt-comment-author Sebastian Davidson
+                      span.mt-comment-date 10 Dec, 09:20 AM
+                    .mt-comment-text
+                      | The standard chunk of Lorem or non-characteristic Ipsum used since the 1500s or non-characteristic.
+                    .mt-comment-details
+                      span.mt-comment-status.mt-comment-status-rejected Rejected
+                      ul.mt-comment-actions
+                        li
+                          a(href='#') Quick Edit
+                        li
+                          a(href='#') View
+                        li
+                          a(href='#') Delete
+              // END: Comments
+            #portlet_comments_2.tab-pane
+              // BEGIN: Comments
+              .mt-comments
+                .mt-comment
+                  .mt-comment-img
+                    img(src='img/pages/media/users/avatar4.jpg')
+                  .mt-comment-body
+                    .mt-comment-info
+                      span.mt-comment-author Michael Baker
+                      span.mt-comment-date 26 Feb, 10:30AM
+                    .mt-comment-text
+                      | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                    .mt-comment-details
+                      span.mt-comment-status.mt-comment-status-approved Approved
+                      ul.mt-comment-actions
+                        li
+                          a(href='#') Quick Edit
+                        li
+                          a(href='#') View
+                        li
+                          a(href='#') Delete
+                .mt-comment
+                  .mt-comment-img
+                    img(src='img/pages/media/users/avatar8.jpg')
+                  .mt-comment-body
+                    .mt-comment-info
+                      span.mt-comment-author Larisa Maskalyova
+                      span.mt-comment-date 12 Feb, 08:30AM
+                    .mt-comment-text  It is a long established fact that a reader will be distracted by.
+                    .mt-comment-details
+                      span.mt-comment-status.mt-comment-status-approved Approved
+                      ul.mt-comment-actions
+                        li
+                          a(href='#') Quick Edit
+                        li
+                          a(href='#') View
+                        li
+                          a(href='#') Delete
+                .mt-comment
+                  .mt-comment-img
+                    img(src='img/pages/media/users/avatar6.jpg')
+                  .mt-comment-body
+                    .mt-comment-info
+                      span.mt-comment-author Natasha Kim
+                      span.mt-comment-date 19 Dec,09:50 AM
+                    .mt-comment-text
+                      | The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                    .mt-comment-details
+                      span.mt-comment-status.mt-comment-status-approved Approved
+                      ul.mt-comment-actions
+                        li
+                          a(href='#') Quick Edit
+                        li
+                          a(href='#') View
+                        li
+                          a(href='#') Delete
+                .mt-comment
+                  .mt-comment-img
+                    img(src='img/pages/media/users/avatar1.jpg')
+                  .mt-comment-body
+                    .mt-comment-info
+                      span.mt-comment-author Sebastian Davidson
+                      span.mt-comment-date 10 Dec, 09:20 AM
+                    .mt-comment-text  The standard chunk of Lorem Ipsum used since the 1500s
+                    .mt-comment-details
+                      span.mt-comment-status.mt-comment-status-approved Approved
+                      ul.mt-comment-actions
+                        li
+                          a(href='#') Quick Edit
+                        li
+                          a(href='#') View
+                        li
+                          a(href='#') Delete
+              // END: Comments
+    .col-lg-6.col-xs-12.col-sm-12
+      .portlet.light.bordered
+        .portlet-title.tabbable-line
+          .caption
+            i.icon-social-twitter.font-dark.hide
+            span.caption-subject.font-dark.bold.uppercase Quick Actions
+          ul.nav.nav-tabs
+            li.active
+              a(href='#tab_actions_pending', data-toggle='tab')  Pending
+            li
+              a(href='#tab_actions_completed', data-toggle='tab')  Completed
+        .portlet-body
+          .tab-content
+            #tab_actions_pending.tab-pane.active
+              // BEGIN: Actions
+              .mt-actions
+                .mt-action
+                  .mt-action-img
+                    img(src='img/pages/media/users/avatar10.jpg')
+                  .mt-action-body
+                    .mt-action-row
+                      .mt-action-info
+                        .mt-action-icon
+                          i.icon-magnet
+                        .mt-action-details
+                          span.mt-action-author Natasha Kim
+                          p.mt-action-desc Dummy text of the printing
+                      .mt-action-datetime
+                        span.mt-action-date 3 jun
+                        span.mt-action-dot.bg-green
+                        span.mt-action-time '9:30-13:00
+                      .mt-action-buttons
+                        .btn-group.btn-group-circle
+                          button.btn.btn-outline.green.btn-sm(type='button') Appove
+                          button.btn.btn-outline.red.btn-sm(type='button') Reject
+                .mt-action
+                  .mt-action-img
+                    img(src='img/pages/media/users/avatar3.jpg')
+                  .mt-action-body
+                    .mt-action-row
+                      .mt-action-info
+                        .mt-action-icon
+                          i.icon-bubbles
+                        .mt-action-details
+                          span.mt-action-author Gavin Bond
+                          p.mt-action-desc pending for approval
+                      .mt-action-datetime
+                        span.mt-action-date 3 jun
+                        span.mt-action-dot.bg-red
+                        span.mt-action-time '9:30-13:00
+                      .mt-action-buttons
+                        .btn-group.btn-group-circle
+                          button.btn.btn-outline.green.btn-sm(type='button') Appove
+                          button.btn.btn-outline.red.btn-sm(type='button') Reject
+                .mt-action
+                  .mt-action-img
+                    img(src='img/pages/media/users/avatar2.jpg')
+                  .mt-action-body
+                    .mt-action-row
+                      .mt-action-info
+                        .mt-action-icon
+                          i.icon-call-in
+                        .mt-action-details
+                          span.mt-action-author Diana Berri
+                          p.mt-action-desc Lorem Ipsum is simply dummy text
+                      .mt-action-datetime
+                        span.mt-action-date 3 jun
+                        span.mt-action-dot.bg-green
+                        span.mt-action-time '9:30-13:00
+                      .mt-action-buttons
+                        .btn-group.btn-group-circle
+                          button.btn.btn-outline.green.btn-sm(type='button') Appove
+                          button.btn.btn-outline.red.btn-sm(type='button') Reject
+                .mt-action
+                  .mt-action-img
+                    img(src='img/pages/media/users/avatar7.jpg')
+                  .mt-action-body
+                    .mt-action-row
+                      .mt-action-info
+                        .mt-action-icon
+                          i.icon-bell
+                        .mt-action-details
+                          span.mt-action-author John Clark
+                          p.mt-action-desc Text of the printing and typesetting industry
+                      .mt-action-datetime
+                        span.mt-action-date 3 jun
+                        span.mt-action-dot.bg-red
+                        span.mt-action-time 9:30-13:00
+                      .mt-action-buttons
+                        .btn-group.btn-group-circle
+                          button.btn.btn-outline.green.btn-sm(type='button') Appove
+                          button.btn.btn-outline.red.btn-sm(type='button') Reject
+                .mt-action
+                  .mt-action-img
+                    img(src='img/pages/media/users/avatar8.jpg')
+                  .mt-action-body
+                    .mt-action-row
+                      .mt-action-info
+                        .mt-action-icon
+                          i.icon-magnet
+                        .mt-action-details
+                          span.mt-action-author Donna Clarkson
+                          p.mt-action-desc Simply dummy text of the printing
+                      .mt-action-datetime
+                        span.mt-action-date 3 jun
+                        span.mt-action-dot.bg-green
+                        span.mt-action-time '9:30-13:00
+                      .mt-action-buttons
+                        .btn-group.btn-group-circle
+                          button.btn.btn-outline.green.btn-sm(type='button') Appove
+                          button.btn.btn-outline.red.btn-sm(type='button') Reject
+                .mt-action
+                  .mt-action-img
+                    img(src='img/pages/media/users/avatar9.jpg')
+                  .mt-action-body
+                    .mt-action-row
+                      .mt-action-info
+                        .mt-action-icon
+                          i.icon-magnet
+                        .mt-action-details
+                          span.mt-action-author Tom Larson
+                          p.mt-action-desc Lorem Ipsum is simply dummy text
+                      .mt-action-datetime
+                        span.mt-action-date 3 jun
+                        span.mt-action-dot.bg-green
+                        span.mt-action-time 9:30-13:00
+                      .mt-action-buttons
+                        .btn-group.btn-group-circle
+                          button.btn.btn-outline.green.btn-sm(type='button') Appove
+                          button.btn.btn-outline.red.btn-sm(type='button') Reject
+              // END: Actions
+            #tab_actions_completed.tab-pane
+              // BEGIN:Completed
+              .mt-actions
+                .mt-action
+                  .mt-action-img
+                    img(src='img/pages/media/users/avatar1.jpg')
+                  .mt-action-body
+                    .mt-action-row
+                      .mt-action-info
+                        .mt-action-icon
+                          i.icon-action-redo
+                        .mt-action-details
+                          span.mt-action-author Frank Cameron
+                          p.mt-action-desc Lorem Ipsum is simply dummy
+                      .mt-action-datetime
+                        span.mt-action-date 3 jun
+                        span.mt-action-dot.bg-red
+                        span.mt-action-time 9:30-13:00
+                      .mt-action-buttons
+                        .btn-group.btn-group-circle
+                          button.btn.btn-outline.green.btn-sm(type='button') Appove
+                          button.btn.btn-outline.red.btn-sm(type='button') Reject
+                .mt-action
+                  .mt-action-img
+                    img(src='img/pages/media/users/avatar8.jpg')
+                  .mt-action-body
+                    .mt-action-row
+                      .mt-action-info
+                        .mt-action-icon
+                          i.icon-cup
+                        .mt-action-details
+                          span.mt-action-author Ella Davidson
+                          p.mt-action-desc Text of the printing and typesetting industry
+                      .mt-action-datetime
+                        span.mt-action-date 3 jun
+                        span.mt-action-dot.bg-green
+                        span.mt-action-time 9:30-13:00
+                      .mt-action-buttons
+                        .btn-group.btn-group-circle
+                          button.btn.btn-outline.green.btn-sm(type='button') Appove
+                          button.btn.btn-outline.red.btn-sm(type='button') Reject
+                .mt-action
+                  .mt-action-img
+                    img(src='img/pages/media/users/avatar5.jpg')
+                  .mt-action-body
+                    .mt-action-row
+                      .mt-action-info
+                        .mt-action-icon
+                          i.icon-graduation
+                        .mt-action-details
+                          span.mt-action-author Jason Dickens
+                          p.mt-action-desc Dummy text of the printing and typesetting industry
+                      .mt-action-datetime
+                        span.mt-action-date 3 jun
+                        span.mt-action-dot.bg-red
+                        span.mt-action-time 9:30-13:00
+                      .mt-action-buttons
+                        .btn-group.btn-group-circle
+                          button.btn.btn-outline.green.btn-sm(type='button') Appove
+                          button.btn.btn-outline.red.btn-sm(type='button') Reject
+                .mt-action
+                  .mt-action-img
+                    img(src='img/pages/media/users/avatar2.jpg')
+                  .mt-action-body
+                    .mt-action-row
+                      .mt-action-info
+                        .mt-action-icon
+                          i.icon-badge
+                        .mt-action-details
+                          span.mt-action-author Jan Kim
+                          p.mt-action-desc Lorem Ipsum is simply dummy
+                      .mt-action-datetime
+                        span.mt-action-date 3 jun
+                        span.mt-action-dot.bg-green
+                        span.mt-action-time 9:30-13:00
+                      .mt-action-buttons
+                        .btn-group.btn-group-circle
+                          button.btn.btn-outline.green.btn-sm(type='button') Appove
+                          button.btn.btn-outline.red.btn-sm(type='button') Reject
+                // END: Completed
+  .row
+    .col-lg-6.col-xs-12.col-sm-12
+      .portlet.light.portlet-fit.bordered
+        .portlet-title
+          .caption
+            i.icon-directions.font-green.hide
+            span.caption-subject.bold.font-dark.uppercase  Activities
+            span.caption-helper Horizontal Timeline
+          .actions
+            .btn-group
+              a.btn.blue.btn-outline.btn-circle.btn-sm(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                | Actions
+                i.fa.fa-angle-down
+              ul.dropdown-menu.pull-right
+                li
+                  a(href='javascript:;')  Action 1
+                li.divider
+                li
+                  a(href='javascript:;') Action 2
+                li
+                  a(href='javascript:;') Action 3
+                li
+                  a(href='javascript:;') Action 4
+        .portlet-body
+          .cd-horizontal-timeline.mt-timeline-horizontal(data-spacing='60')
+            .timeline
+              .events-wrapper
+                .events
+                  ol
+                    li
+                      a.border-after-red.bg-after-red.selected(href='#0', data-date='16/01/2014') 16 Jan
+                    li
+                      a.border-after-red.bg-after-red(href='#0', data-date='28/02/2014') 28 Feb
+                    li
+                      a.border-after-red.bg-after-red(href='#0', data-date='20/04/2014') 20 Mar
+                    li
+                      a.border-after-red.bg-after-red(href='#0', data-date='20/05/2014') 20 May
+                    li
+                      a.border-after-red.bg-after-red(href='#0', data-date='09/07/2014') 09 Jul
+                    li
+                      a.border-after-red.bg-after-red(href='#0', data-date='30/08/2014') 30 Aug
+                    li
+                      a.border-after-red.bg-after-red(href='#0', data-date='15/09/2014') 15 Sep
+                    li
+                      a.border-after-red.bg-after-red(href='#0', data-date='01/11/2014') 01 Nov
+                    li
+                      a.border-after-red.bg-after-red(href='#0', data-date='10/12/2014') 10 Dec
+                    li
+                      a.border-after-red.bg-after-red(href='#0', data-date='19/01/2015') 29 Jan
+                    li
+                      a.border-after-red.bg-after-red(href='#0', data-date='03/03/2015') 3 Mar
+                  span.filling-line.bg-red(aria-hidden='true')
+                // .events
+              // .events-wrapper
+              ul.cd-timeline-navigation.mt-ht-nav-icon
+                li
+                  a.prev.inactive.btn.btn-outline.red.md-skip(href='#0')
+                    i.fa.fa-chevron-left
+                li
+                  a.next.btn.btn-outline.red.md-skip(href='#0')
+                    i.fa.fa-chevron-right
+              // .cd-timeline-navigation
+            // .timeline
+            .events-content
+              ol
+                li.selected(data-date='16/01/2014')
+                  .mt-title
+                    h2.mt-content-title New User
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_3.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Andres Iniesta
+                    .mt-author-datetime.font-grey-mint 16 January 2014 : 7:45 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, mi felis, aliquam at iaculis mi felis, aliquam
+                      | at iaculis finibus eu ex. Integer efficitur tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur odio non est rhoncus volutpat.
+                    a.btn.btn-circle.red.btn-outline(href='javascript:;') Read More
+                    a.btn.btn-circle.btn-icon-only.blue(href='javascript:;')
+                      i.fa.fa-plus
+                    a.btn.btn-circle.btn-icon-only.green.pull-right(href='javascript:;')
+                      i.fa.fa-twitter
+                li(data-date='28/02/2014')
+                  .mt-title
+                    h2.mt-content-title Sending Shipment
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_3.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Hugh Grant
+                    .mt-author-datetime.font-grey-mint 28 February 2014 : 10:15 AM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    a.btn.btn-circle.btn-outline.green-jungle(href='javascript:;') Download Shipment List
+                    .btn-group.dropup.pull-right
+                      button.btn.btn-circle.blue-steel.dropdown-toggle(type='button', data-toggle='dropdown', data-hover='dropdown', data-close-others='true', aria-expanded='false')
+                        | Actions
+                        i.fa.fa-angle-down
+                      ul.dropdown-menu.pull-right(role='menu')
+                        li
+                          a(href='javascript:;') Action
+                        li
+                          a(href='javascript:;') Another action
+                        li
+                          a(href='javascript:;') Something else here
+                        li.divider
+                        li
+                          a(href='javascript:;') Separated link
+                li(data-date='20/04/2014')
+                  .mt-title
+                    h2.mt-content-title Blue Chambray
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_1.jpg')
+                    .mt-author-name
+                      a.font-blue(href='javascript:;') Rory Matthew
+                    .mt-author-datetime.font-grey-mint 20 April 2014 : 10:45 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis
+                      | qui ut. laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.
+                    a.btn.btn-circle.red(href='javascript:;') Read More
+                li(data-date='20/05/2014')
+                  .mt-title
+                    h2.mt-content-title Timeline Received
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_2.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Andres Iniesta
+                    .mt-author-datetime.font-grey-mint 20 May 2014 : 12:20 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    a.btn.btn-circle.green-turquoise(href='javascript:;') Read More
+                li(data-date='09/07/2014')
+                  .mt-title
+                    h2.mt-content-title Event Success
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_1.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Matt Goldman
+                    .mt-author-datetime.font-grey-mint 9 July 2014 : 8:15 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde.
+                    a.btn.btn-circle.btn-outline.purple-medium(href='javascript:;') View Summary
+                    .btn-group.dropup.pull-right
+                      button.btn.btn-circle.green.dropdown-toggle(type='button', data-toggle='dropdown', data-hover='dropdown', data-close-others='true', aria-expanded='false')
+                        | Actions
+                        i.fa.fa-angle-down
+                      ul.dropdown-menu.pull-right(role='menu')
+                        li
+                          a(href='javascript:;') Action
+                        li
+                          a(href='javascript:;') Another action
+                        li
+                          a(href='javascript:;') Something else here
+                        li.divider
+                        li
+                          a(href='javascript:;') Separated link
+                li(data-date='30/08/2014')
+                  .mt-title
+                    h2.mt-content-title Conference Call
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_1.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Rory Matthew
+                    .mt-author-datetime.font-grey-mint 30 August 2014 : 5:45 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    img.timeline-body-img.pull-left(src='img/pages/media/blog/5.jpg', alt='')
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis
+                      | qui ut. laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis
+                      | qui ut. laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis
+                      | qui ut. laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.
+                    a.btn.btn-circle.red(href='javascript:;') Read More
+                li(data-date='15/09/2014')
+                  .mt-title
+                    h2.mt-content-title Conference Decision
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_5.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Jessica Wolf
+                    .mt-author-datetime.font-grey-mint 15 September 2014 : 8:30 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    img.timeline-body-img.pull-right(src='img/pages/media/blog/6.jpg', alt='')
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis
+                      | qui ut.
+                    a.btn.btn-circle.green-sharp(href='javascript:;') Read More
+                li(data-date='01/11/2014')
+                  .mt-title
+                    h2.mt-content-title Timeline Received
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_2.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Andres Iniesta
+                    .mt-author-datetime.font-grey-mint 1 November 2014 : 12:20 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    a.btn.btn-circle.green-turquoise(href='javascript:;') Read More
+                li(data-date='10/12/2014')
+                  .mt-title
+                    h2.mt-content-title Timeline Received
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_2.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Andres Iniesta
+                    .mt-author-datetime.font-grey-mint 10 December 2015 : 12:20 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    a.btn.btn-circle.green-turquoise(href='javascript:;') Read More
+                li(data-date='19/01/2015')
+                  .mt-title
+                    h2.mt-content-title Timeline Received
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_2.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Andres Iniesta
+                    .mt-author-datetime.font-grey-mint 19 January 2015 : 12:20 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    a.btn.btn-circle.green-turquoise(href='javascript:;') Read More
+                li(data-date='03/03/2015')
+                  .mt-title
+                    h2.mt-content-title Timeline Received
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_2.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Andres Iniesta
+                    .mt-author-datetime.font-grey-mint 3 March 2015 : 12:20 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    a.btn.btn-circle.green-turquoise(href='javascript:;') Read More
+            // .events-content
+    .col-lg-6.col-xs-12.col-sm-12
+      .portlet.light.portlet-fit.bordered
+        .portlet-title
+          .caption
+            i.icon-directions.font-green.hide
+            span.caption-subject.bold.font-dark.uppercase  Events
+            span.caption-helper Horizontal Timeline
+          .actions
+            .btn-group.btn-group-devided(data-toggle='buttons')
+              label.btn.green.btn-outline.btn-circle.btn-sm.active
+                input#option1.toggle(type='radio', name='options')
+                | Actions
+              label.btn.green.btn-outline.btn-circle.btn-sm
+                input#option2.toggle(type='radio', name='options')
+                | Tools
+        .portlet-body
+          .cd-horizontal-timeline.mt-timeline-horizontal(data-spacing='60')
+            .timeline.mt-timeline-square
+              .events-wrapper
+                .events
+                  ol
+                    li
+                      a.border-after-blue.bg-after-blue.selected(href='#0', data-date='16/01/2014') Expo 2016
+                    li
+                      a.border-after-blue.bg-after-blue(href='#0', data-date='28/02/2014') New Promo
+                    li
+                      a.border-after-blue.bg-after-blue(href='#0', data-date='20/04/2014') Meeting
+                    li
+                      a.border-after-blue.bg-after-blue(href='#0', data-date='20/05/2014') Launch
+                    li
+                      a.border-after-blue.bg-after-blue(href='#0', data-date='09/07/2014') Party
+                    li
+                      a.border-after-blue.bg-after-blue(href='#0', data-date='30/08/2014') Reports
+                    li
+                      a.border-after-blue.bg-after-blue(href='#0', data-date='15/09/2014') HR
+                    li
+                      a.border-after-blue.bg-after-blue(href='#0', data-date='01/11/2014') IPO
+                    li
+                      a.border-after-blue.bg-after-blue(href='#0', data-date='10/12/2014') Board
+                    li
+                      a.border-after-blue.bg-after-blue(href='#0', data-date='19/01/2015') Revenue
+                    li
+                      a.border-after-blue.bg-after-blue(href='#0', data-date='03/03/2015') Dinner
+                  span.filling-line.bg-blue(aria-hidden='true')
+                // .events
+              // .events-wrapper
+              ul.cd-timeline-navigation.mt-ht-nav-icon
+                li
+                  a.prev.inactive.btn.blue.md-skip(href='#0')
+                    i.fa.fa-chevron-left
+                li
+                  a.next.btn.blue.md-skip(href='#0')
+                    i.fa.fa-chevron-right
+              // .cd-timeline-navigation
+            // .timeline
+            .events-content
+              ol
+                li.selected(data-date='16/01/2014')
+                  .mt-title
+                    h2.mt-content-title Expo 2016 Launch
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_2.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Lisa Bold
+                    .mt-author-datetime.font-grey-mint 23 February 2014
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod mi felis, aliquam at iaculis eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis mi felis, aliquam
+                      | at iaculis eu, onsectetur adipiscing elit finibus eu ex. Integer efficitur leo eget dolor tincidunt, et dignissim risus lacinia. Nam in egestas onsectetur adipiscing elit nunc. Suspendisse
+                      | potenti
+                    a.btn.btn-circle.dark.btn-outline(href='javascript:;') Read More
+                    a.btn.btn-circle.btn-icon-only.green.pull-right(href='javascript:;')
+                      i.fa.fa-twitter
+                li(data-date='28/02/2014')
+                  .mt-title
+                    h2.mt-content-title Sending Shipment
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_3.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Hugh Grant
+                    .mt-author-datetime.font-grey-mint 28 February 2014 : 10:15 AM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    a.btn.btn-circle.btn-outline.green-jungle(href='javascript:;') Download Shipment List
+                    .btn-group.dropup.pull-right
+                      button.btn.btn-circle.blue-steel.dropdown-toggle(type='button', data-toggle='dropdown', data-hover='dropdown', data-close-others='true', aria-expanded='false')
+                        | Actions
+                        i.fa.fa-angle-down
+                      ul.dropdown-menu.pull-right(role='menu')
+                        li
+                          a(href='javascript:;') Action
+                        li
+                          a(href='javascript:;') Another action
+                        li
+                          a(href='javascript:;') Something else here
+                        li.divider
+                        li
+                          a(href='javascript:;') Separated link
+                li(data-date='20/04/2014')
+                  .mt-title
+                    h2.mt-content-title Blue Chambray
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_1.jpg')
+                    .mt-author-name
+                      a.font-blue(href='javascript:;') Rory Matthew
+                    .mt-author-datetime.font-grey-mint 20 April 2014 : 10:45 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis
+                      | qui ut. laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.
+                    a.btn.btn-circle.red(href='javascript:;') Read More
+                li(data-date='20/05/2014')
+                  .mt-title
+                    h2.mt-content-title Timeline Received
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_2.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Andres Iniesta
+                    .mt-author-datetime.font-grey-mint 20 May 2014 : 12:20 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    a.btn.btn-circle.green-turquoise(href='javascript:;') Read More
+                li(data-date='09/07/2014')
+                  .mt-title
+                    h2.mt-content-title Event Success
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_1.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Matt Goldman
+                    .mt-author-datetime.font-grey-mint 9 July 2014 : 8:15 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde.
+                    a.btn.btn-circle.btn-outline.purple-medium(href='javascript:;') View Summary
+                    .btn-group.dropup.pull-right
+                      button.btn.btn-circle.green.dropdown-toggle(type='button', data-toggle='dropdown', data-hover='dropdown', data-close-others='true', aria-expanded='false')
+                        | Actions
+                        i.fa.fa-angle-down
+                      ul.dropdown-menu.pull-right(role='menu')
+                        li
+                          a(href='javascript:;') Action
+                        li
+                          a(href='javascript:;') Another action
+                        li
+                          a(href='javascript:;') Something else here
+                        li.divider
+                        li
+                          a(href='javascript:;') Separated link
+                li(data-date='30/08/2014')
+                  .mt-title
+                    h2.mt-content-title Conference Call
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_1.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Rory Matthew
+                    .mt-author-datetime.font-grey-mint 30 August 2014 : 5:45 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    img.timeline-body-img.pull-left(src='img/pages/media/blog/5.jpg', alt='')
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis
+                      | qui ut. laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis
+                      | qui ut. laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis
+                      | qui ut. laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.
+                    a.btn.btn-circle.red(href='javascript:;') Read More
+                li(data-date='15/09/2014')
+                  .mt-title
+                    h2.mt-content-title Conference Decision
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_5.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Jessica Wolf
+                    .mt-author-datetime.font-grey-mint 15 September 2014 : 8:30 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    img.timeline-body-img.pull-right(src='img/pages/media/blog/6.jpg', alt='')
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis
+                      | qui ut.
+                    a.btn.btn-circle.green-sharp(href='javascript:;') Read More
+                li(data-date='01/11/2014')
+                  .mt-title
+                    h2.mt-content-title Timeline Received
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_2.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Andres Iniesta
+                    .mt-author-datetime.font-grey-mint 1 November 2014 : 12:20 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    a.btn.btn-circle.green-turquoise(href='javascript:;') Read More
+                li(data-date='10/12/2014')
+                  .mt-title
+                    h2.mt-content-title Timeline Received
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_2.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Andres Iniesta
+                    .mt-author-datetime.font-grey-mint 10 December 2014 : 12:20 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    a.btn.btn-circle.green-turquoise(href='javascript:;') Read More
+                li(data-date='19/01/2015')
+                  .mt-title
+                    h2.mt-content-title Timeline Received
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_2.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Andres Iniesta
+                    .mt-author-datetime.font-grey-mint 19 January 2015 : 12:20 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    a.btn.btn-circle.green-turquoise(href='javascript:;') Read More
+                li(data-date='03/03/2015')
+                  .mt-title
+                    h2.mt-content-title Timeline Received
+                  .mt-author
+                    .mt-avatar
+                      img(src='img/pages/media/users/avatar80_2.jpg')
+                    .mt-author-name
+                      a.font-blue-madison(href='javascript:;') Andres Iniesta
+                    .mt-author-datetime.font-grey-mint 3 March 2015 : 12:20 PM
+                  .clearfix
+                  .mt-content.border-grey-steel
+                    p
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, finibus eu ex. Integer efficitur leo eget
+                      | dolor tincidunt, et dignissim risus lacinia. Nam in egestas nunc. Suspendisse potenti. Cras ullamcorper tincidunt malesuada. Sed sit amet molestie elit, vel placerat ipsum. Ut consectetur
+                      | odio non est rhoncus volutpat. Nullam interdum, neque quis vehicula ornare, lacus elit dignissim purus, quis ultrices erat tortor eget felis. Cras commodo id massa at condimentum. Praesent
+                      | dignissim luctus risus sed sodales.
+                    a.btn.btn-circle.green-turquoise(href='javascript:;') Read More
+            // .events-content
+  .row
+    .col-lg-6.col-xs-12.col-sm-12
+      .portlet.light.bordered
+        .portlet-title
+          .caption
+            i.icon-share.font-dark.hide
+            span.caption-subject.font-dark.bold.uppercase Recent Activities
+          .actions
+            .btn-group
+              a.btn.btn-sm.blue.btn-outline.btn-circle(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                | Filter By
+                i.fa.fa-angle-down
+              .dropdown-menu.hold-on-click.dropdown-checkboxes.pull-right
+                label.mt-checkbox.mt-checkbox-outline
+                  input(type='checkbox')
+                  |  Finance
+                  span
+                label.mt-checkbox.mt-checkbox-outline
+                  input(type='checkbox', checked='')
+                  |  Membership
+                  span
+                label.mt-checkbox.mt-checkbox-outline
+                  input(type='checkbox')
+                  |  Customer Support
+                  span
+                label.mt-checkbox.mt-checkbox-outline
+                  input(type='checkbox', checked='')
+                  |  HR
+                  span
+                label.mt-checkbox.mt-checkbox-outline
+                  input(type='checkbox')
+                  |  System
+                  span
+        .portlet-body
+          .scroller(style='height: 300px;', data-always-visible='1', data-rail-visible='0')
+            ul.feeds
+              li
+                .col1
+                  .cont
+                    .cont-col1
+                      .label.label-sm.label-info
+                        i.fa.fa-check
+                    .cont-col2
+                      .desc
+                        | You have 4 pending tasks.
+                        span.label.label-sm.label-warning
+                          | Take action
+                          i.fa.fa-share
+                .col2
+                  .date  Just now
+              li
+                a(href='javascript:;')
+                  .col1
+                    .cont
+                      .cont-col1
+                        .label.label-sm.label-success
+                          i.fa.fa-bar-chart-o
+                      .cont-col2
+                        .desc  Finance Report for year 2013 has been released.
+                  .col2
+                    .date  20 mins
+              li
+                .col1
+                  .cont
+                    .cont-col1
+                      .label.label-sm.label-danger
+                        i.fa.fa-user
+                    .cont-col2
+                      .desc  You have 5 pending membership that requires a quick review.
+                .col2
+                  .date  24 mins
+              li
+                .col1
+                  .cont
+                    .cont-col1
+                      .label.label-sm.label-info
+                        i.fa.fa-shopping-cart
+                    .cont-col2
+                      .desc
+                        | New order received with
+                        span.label.label-sm.label-success  Reference Number: DR23923
+                .col2
+                  .date  30 mins
+              li
+                .col1
+                  .cont
+                    .cont-col1
+                      .label.label-sm.label-success
+                        i.fa.fa-user
+                    .cont-col2
+                      .desc  You have 5 pending membership that requires a quick review.
+                .col2
+                  .date  24 mins
+              li
+                .col1
+                  .cont
+                    .cont-col1
+                      .label.label-sm.label-default
+                        i.fa.fa-bell-o
+                    .cont-col2
+                      .desc
+                        | Web server hardware needs to be upgraded.
+                        span.label.label-sm.label-default  Overdue
+                .col2
+                  .date  2 hours
+              li
+                a(href='javascript:;')
+                  .col1
+                    .cont
+                      .cont-col1
+                        .label.label-sm.label-default
+                          i.fa.fa-briefcase
+                      .cont-col2
+                        .desc  IPO Report for year 2013 has been released.
+                  .col2
+                    .date  20 mins
+              li
+                .col1
+                  .cont
+                    .cont-col1
+                      .label.label-sm.label-info
+                        i.fa.fa-check
+                    .cont-col2
+                      .desc
+                        | You have 4 pending tasks.
+                        span.label.label-sm.label-warning
+                          | Take action
+                          i.fa.fa-share
+                .col2
+                  .date  Just now
+              li
+                a(href='javascript:;')
+                  .col1
+                    .cont
+                      .cont-col1
+                        .label.label-sm.label-danger
+                          i.fa.fa-bar-chart-o
+                      .cont-col2
+                        .desc  Finance Report for year 2013 has been released.
+                  .col2
+                    .date  20 mins
+              li
+                .col1
+                  .cont
+                    .cont-col1
+                      .label.label-sm.label-default
+                        i.fa.fa-user
+                    .cont-col2
+                      .desc  You have 5 pending membership that requires a quick review.
+                .col2
+                  .date  24 mins
+              li
+                .col1
+                  .cont
+                    .cont-col1
+                      .label.label-sm.label-info
+                        i.fa.fa-shopping-cart
+                    .cont-col2
+                      .desc
+                        | New order received with
+                        span.label.label-sm.label-success  Reference Number: DR23923
+                .col2
+                  .date  30 mins
+              li
+                .col1
+                  .cont
+                    .cont-col1
+                      .label.label-sm.label-success
+                        i.fa.fa-user
+                    .cont-col2
+                      .desc  You have 5 pending membership that requires a quick review.
+                .col2
+                  .date  24 mins
+              li
+                .col1
+                  .cont
+                    .cont-col1
+                      .label.label-sm.label-warning
+                        i.fa.fa-bell-o
+                    .cont-col2
+                      .desc
+                        | Web server hardware needs to be upgraded.
+                        span.label.label-sm.label-default  Overdue
+                .col2
+                  .date  2 hours
+              li
+                a(href='javascript:;')
+                  .col1
+                    .cont
+                      .cont-col1
+                        .label.label-sm.label-info
+                          i.fa.fa-briefcase
+                      .cont-col2
+                        .desc  IPO Report for year 2013 has been released.
+                  .col2
+                    .date  20 mins
+          .scroller-footer
+            .btn-arrow-link.pull-right
+              a(href='javascript:;') See All Records
+              i.icon-arrow-right
+    .col-lg-6.col-xs-12.col-sm-12
+      .portlet.light.tasks-widget.bordered
+        .portlet-title
+          .caption
+            i.icon-share.font-dark.hide
+            span.caption-subject.font-dark.bold.uppercase Tasks
+            span.caption-helper tasks summary...
+          .actions
+            .btn-group
+              a.btn.blue-oleo.btn-circle.btn-sm(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                | More
+                i.fa.fa-angle-down
+              ul.dropdown-menu.pull-right
+                li
+                  a(href='javascript:;')  All Project
+                li.divider
+                li
+                  a(href='javascript:;')  AirAsia
+                li
+                  a(href='javascript:;')  Cruise
+                li
+                  a(href='javascript:;')  HSBC
+                li.divider
+                li
+                  a(href='javascript:;')
+                    | Pending
+                    span.badge.badge-danger  4
+                li
+                  a(href='javascript:;')
+                    | Completed
+                    span.badge.badge-success  12
+                li
+                  a(href='javascript:;')
+                    | Overdue
+                    span.badge.badge-warning  9
+        .portlet-body
+          .task-content
+            .scroller(style='height: 312px;', data-always-visible='1', data-rail-visible1='1')
+              // START TASK LIST
+              ul.task-list
+                li
+                  .task-checkbox
+                    label.mt-checkbox.mt-checkbox-single.mt-checkbox-outline
+                      input.checkboxes(type='checkbox', value='1')
+                      span
+                  .task-title
+                    span.task-title-sp  Present 2013 Year IPO Statistics at Board Meeting
+                    span.label.label-sm.label-success Company
+                    span.task-bell
+                      i.fa.fa-bell-o
+                  .task-config
+                    .task-config-btn.btn-group
+                      a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                        i.fa.fa-cog
+                        i.fa.fa-angle-down
+                      ul.dropdown-menu.pull-right
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-check
+                            |  Complete
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-pencil
+                            |  Edit
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-trash-o
+                            |  Cancel
+                li
+                  .task-checkbox
+                    label.mt-checkbox.mt-checkbox-single.mt-checkbox-outline
+                      input.checkboxes(type='checkbox', value='1')
+                      span
+                  .task-title
+                    span.task-title-sp  Hold An Interview for Marketing Manager Position
+                    span.label.label-sm.label-danger Marketing
+                  .task-config
+                    .task-config-btn.btn-group
+                      a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                        i.fa.fa-cog
+                        i.fa.fa-angle-down
+                      ul.dropdown-menu.pull-right
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-check
+                            |  Complete
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-pencil
+                            |  Edit
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-trash-o
+                            |  Cancel
+                li
+                  .task-checkbox
+                    label.mt-checkbox.mt-checkbox-single.mt-checkbox-outline
+                      input.checkboxes(type='checkbox', value='1')
+                      span
+                  .task-title
+                    span.task-title-sp  AirAsia Intranet System Project Internal Meeting
+                    span.label.label-sm.label-success AirAsia
+                    span.task-bell
+                      i.fa.fa-bell-o
+                  .task-config
+                    .task-config-btn.btn-group
+                      a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                        i.fa.fa-cog
+                        i.fa.fa-angle-down
+                      ul.dropdown-menu.pull-right
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-check
+                            |  Complete
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-pencil
+                            |  Edit
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-trash-o
+                            |  Cancel
+                li
+                  .task-checkbox
+                    label.mt-checkbox.mt-checkbox-single.mt-checkbox-outline
+                      input.checkboxes(type='checkbox', value='1')
+                      span
+                  .task-title
+                    span.task-title-sp  Technical Management Meeting
+                    span.label.label-sm.label-warning Company
+                  .task-config
+                    .task-config-btn.btn-group
+                      a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                        i.fa.fa-cog
+                        i.fa.fa-angle-down
+                      ul.dropdown-menu.pull-right
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-check
+                            |  Complete
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-pencil
+                            |  Edit
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-trash-o
+                            |  Cancel
+                li
+                  .task-checkbox
+                    label.mt-checkbox.mt-checkbox-single.mt-checkbox-outline
+                      input.checkboxes(type='checkbox', value='1')
+                      span
+                  .task-title
+                    span.task-title-sp  Kick-off Company CRM Mobile App Development
+                    span.label.label-sm.label-info Internal Products
+                  .task-config
+                    .task-config-btn.btn-group
+                      a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                        i.fa.fa-cog
+                        i.fa.fa-angle-down
+                      ul.dropdown-menu.pull-right
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-check
+                            |  Complete
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-pencil
+                            |  Edit
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-trash-o
+                            |  Cancel
+                li
+                  .task-checkbox
+                    label.mt-checkbox.mt-checkbox-single.mt-checkbox-outline
+                      input.checkboxes(type='checkbox', value='1')
+                      span
+                  .task-title
+                    span.task-title-sp  Prepare Commercial Offer For SmartVision Website Rewamp
+                    span.label.label-sm.label-danger SmartVision
+                  .task-config
+                    .task-config-btn.btn-group
+                      a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                        i.fa.fa-cog
+                        i.fa.fa-angle-down
+                      ul.dropdown-menu.pull-right
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-check
+                            |  Complete
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-pencil
+                            |  Edit
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-trash-o
+                            |  Cancel
+                li
+                  .task-checkbox
+                    label.mt-checkbox.mt-checkbox-single.mt-checkbox-outline
+                      input.checkboxes(type='checkbox', value='1')
+                      span
+                  .task-title
+                    span.task-title-sp  Sign-Off The Comercial Agreement With AutoSmart
+                    span.label.label-sm.label-default AutoSmart
+                    span.task-bell
+                      i.fa.fa-bell-o
+                  .task-config
+                    .task-config-btn.btn-group.dropup
+                      a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                        i.fa.fa-cog
+                        i.fa.fa-angle-down
+                      ul.dropdown-menu.pull-right
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-check
+                            |  Complete
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-pencil
+                            |  Edit
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-trash-o
+                            |  Cancel
+                li
+                  .task-checkbox
+                    label.mt-checkbox.mt-checkbox-single.mt-checkbox-outline
+                      input.checkboxes(type='checkbox', value='1')
+                      span
+                  .task-title
+                    span.task-title-sp  Company Staff Meeting
+                    span.label.label-sm.label-success Cruise
+                    span.task-bell
+                      i.fa.fa-bell-o
+                  .task-config
+                    .task-config-btn.btn-group.dropup
+                      a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                        i.fa.fa-cog
+                        i.fa.fa-angle-down
+                      ul.dropdown-menu.pull-right
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-check
+                            |  Complete
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-pencil
+                            |  Edit
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-trash-o
+                            |  Cancel
+                li.last-line
+                  .task-checkbox
+                    label.mt-checkbox.mt-checkbox-single.mt-checkbox-outline
+                      input.checkboxes(type='checkbox', value='1')
+                      span
+                  .task-title
+                    span.task-title-sp  Keenimg Investment Discussion
+                    span.label.label-sm.label-warning Keenimg
+                  .task-config
+                    .task-config-btn.btn-group.dropup
+                      a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                        i.fa.fa-cog
+                        i.fa.fa-angle-down
+                      ul.dropdown-menu.pull-right
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-check
+                            |  Complete
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-pencil
+                            |  Edit
+                        li
+                          a(href='javascript:;')
+                            i.fa.fa-trash-o
+                            |  Cancel
+              // END START TASK LIST
+          .task-footer
+            .btn-arrow-link.pull-right
+              a(href='javascript:;') See All Records
+              i.icon-arrow-right
+  .row
+    .col-lg-6.col-xs-12.col-sm-12
+      .portlet.light.bordered
+        .portlet-title
+          .caption
+            i.icon-cursor.font-dark.hide
+            span.caption-subject.font-dark.bold.uppercase General Stats
+          .actions
+            a.btn.btn-sm.btn-circle.red.easy-pie-chart-reload(href='javascript:;')
+              i.fa.fa-repeat
+              |  Reload
+        .portlet-body
+          .row
+            .col-md-4
+              .easy-pie-chart
+                .number.transactions(data-percent='55')
+                  span +55
+                  | %
+                a.title(href='javascript:;')
+                  | Transactions
+                  i.icon-arrow-right
+            .margin-bottom-10.visible-sm
+            .col-md-4
+              .easy-pie-chart
+                .number.visits(data-percent='85')
+                  span +85
+                  | %
+                a.title(href='javascript:;')
+                  | New Visits
+                  i.icon-arrow-right
+            .margin-bottom-10.visible-sm
+            .col-md-4
+              .easy-pie-chart
+                .number.bounce(data-percent='46')
+                  span -46
+                  | %
+                a.title(href='javascript:;')
+                  | Bounce
+                  i.icon-arrow-right
+    .col-lg-6.col-xs-12.col-sm-12
+      .portlet.light.bordered
+        .portlet-title
+          .caption
+            i.icon-equalizer.font-dark.hide
+            span.caption-subject.font-dark.bold.uppercase Server Stats
+            span.caption-helper monthly stats...
+          .tools
+            a.collapse(href='')
+            a.config(href='#portlet-config', data-toggle='modal')
+            a.reload(href='')
+            a.remove(href='')
+        .portlet-body
+          .row
+            .col-md-4
+              .sparkline-chart
+                #sparkline_bar5.number
+                a.title(href='javascript:;')
+                  | Network
+                  i.icon-arrow-right
+            .margin-bottom-10.visible-sm
+            .col-md-4
+              .sparkline-chart
+                #sparkline_bar6.number
+                a.title(href='javascript:;')
+                  | CPU Load
+                  i.icon-arrow-right
+            .margin-bottom-10.visible-sm
+            .col-md-4
+              .sparkline-chart
+                #sparkline_line.number
+                a.title(href='javascript:;')
+                  | Load Rate
+                  i.icon-arrow-right
+  .row
+    .col-lg-6.col-xs-12.col-sm-12
+      // BEGIN REGIONAL STATS PORTLET
+      .portlet.light.bordered
+        .portlet-title
+          .caption
+            i.icon-share.font-dark.hide
+            span.caption-subject.font-dark.bold.uppercase Regional Stats
+          .actions
+            a.btn.btn-circle.btn-icon-only.btn-default(href='javascript:;')
+              i.icon-cloud-upload
+            a.btn.btn-circle.btn-icon-only.btn-default(href='javascript:;')
+              i.icon-wrench
+            a.btn.btn-circle.btn-icon-only.btn-default.fullscreen(data-container='false', data-placement='bottom', href='javascript:;')
+            a.btn.btn-circle.btn-icon-only.btn-default(href='javascript:;')
+              i.icon-trash
+        .portlet-body
+          #region_statistics_loading
+            img(src='img/global/img/loading.gif', alt='loading')
+          #region_statistics_content.display-none
+            .btn-toolbar.margin-bottom-10
+              .btn-group.btn-group-circle(data-toggle='buttons')
+                a.btn.grey-salsa.btn-sm.active(href='')  Users
+                a.btn.grey-salsa.btn-sm(href='')  Orders
+              .btn-group.pull-right
+                a.btn.btn-circle.grey-salsa.btn-sm.dropdown-toggle(href='', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                  | Select Region
+                  span.fa.fa-angle-down
+                ul.dropdown-menu.pull-right
+                  li
+                    a#regional_stat_world(href='javascript:;')  World
+                  li
+                    a#regional_stat_usa(href='javascript:;')  USA
+                  li
+                    a#regional_stat_europe(href='javascript:;')  Europe
+                  li
+                    a#regional_stat_russia(href='javascript:;')  Russia
+                  li
+                    a#regional_stat_germany(href='javascript:;')  Germany
+            #vmap_world.vmaps.display-none
+            #vmap_usa.vmaps.display-none
+            #vmap_europe.vmaps.display-none
+            #vmap_russia.vmaps.display-none
+            #vmap_germany.vmaps.display-none
+      // END REGIONAL STATS PORTLET
+    .col-lg-6.col-xs-12.col-sm-12
+      // BEGIN PORTLET
+      .portlet.light.bordered
+        .portlet-title.tabbable-line
+          .caption
+            i.icon-globe.font-dark.hide
+            span.caption-subject.font-dark.bold.uppercase Feeds
+          ul.nav.nav-tabs
+            li.active
+              a.active(href='#tab_1_1', data-toggle='tab')  System
+            li
+              a(href='#tab_1_2', data-toggle='tab')  Activities
+        .portlet-body
+          // BEGIN TABS
+          .tab-content
+            #tab_1_1.tab-pane.active
+              .scroller(style='height: 339px;', data-always-visible='1', data-rail-visible='0')
+                ul.feeds
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-success
+                            i.fa.fa-bell-o
+                        .cont-col2
+                          .desc
+                            | You have 4 pending tasks.
+                            span.label.label-sm.label-info
+                              | Take action
+                              i.fa.fa-share
+                    .col2
+                      .date  Just now
+                  li
+                    a(href='javascript:;')
+                      .col1
+                        .cont
+                          .cont-col1
+                            .label.label-sm.label-success
+                              i.fa.fa-bell-o
+                          .cont-col2
+                            .desc  New version v1.4 just lunched!
+                      .col2
+                        .date  20 mins
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-danger
+                            i.fa.fa-bolt
+                        .cont-col2
+                          .desc  Database server #12 overloaded. Please fix the issue.
+                    .col2
+                      .date  24 mins
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-info
+                            i.fa.fa-bullhorn
+                        .cont-col2
+                          .desc  New order received. Please take care of it.
+                    .col2
+                      .date  30 mins
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-success
+                            i.fa.fa-bullhorn
+                        .cont-col2
+                          .desc  New order received. Please take care of it.
+                    .col2
+                      .date  40 mins
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-warning
+                            i.fa.fa-plus
+                        .cont-col2
+                          .desc  New user registered.
+                    .col2
+                      .date  1.5 hours
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-success
+                            i.fa.fa-bell-o
+                        .cont-col2
+                          .desc
+                            | Web server hardware needs to be upgraded.
+                            span.label.label-sm.label-default  Overdue
+                    .col2
+                      .date  2 hours
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-default
+                            i.fa.fa-bullhorn
+                        .cont-col2
+                          .desc  New order received. Please take care of it.
+                    .col2
+                      .date  3 hours
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-warning
+                            i.fa.fa-bullhorn
+                        .cont-col2
+                          .desc  New order received. Please take care of it.
+                    .col2
+                      .date  5 hours
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-info
+                            i.fa.fa-bullhorn
+                        .cont-col2
+                          .desc  New order received. Please take care of it.
+                    .col2
+                      .date  18 hours
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-default
+                            i.fa.fa-bullhorn
+                        .cont-col2
+                          .desc  New order received. Please take care of it.
+                    .col2
+                      .date  21 hours
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-info
+                            i.fa.fa-bullhorn
+                        .cont-col2
+                          .desc  New order received. Please take care of it.
+                    .col2
+                      .date  22 hours
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-default
+                            i.fa.fa-bullhorn
+                        .cont-col2
+                          .desc  New order received. Please take care of it.
+                    .col2
+                      .date  21 hours
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-info
+                            i.fa.fa-bullhorn
+                        .cont-col2
+                          .desc  New order received. Please take care of it.
+                    .col2
+                      .date  22 hours
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-default
+                            i.fa.fa-bullhorn
+                        .cont-col2
+                          .desc  New order received. Please take care of it.
+                    .col2
+                      .date  21 hours
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-info
+                            i.fa.fa-bullhorn
+                        .cont-col2
+                          .desc  New order received. Please take care of it.
+                    .col2
+                      .date  22 hours
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-default
+                            i.fa.fa-bullhorn
+                        .cont-col2
+                          .desc  New order received. Please take care of it.
+                    .col2
+                      .date  21 hours
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-info
+                            i.fa.fa-bullhorn
+                        .cont-col2
+                          .desc  New order received. Please take care of it.
+                    .col2
+                      .date  22 hours
+            #tab_1_2.tab-pane
+              .scroller(style='height: 290px;', data-always-visible='1', data-rail-visible1='1')
+                ul.feeds
+                  li
+                    a(href='javascript:;')
+                      .col1
+                        .cont
+                          .cont-col1
+                            .label.label-sm.label-success
+                              i.fa.fa-bell-o
+                          .cont-col2
+                            .desc  New user registered
+                      .col2
+                        .date  Just now
+                  li
+                    a(href='javascript:;')
+                      .col1
+                        .cont
+                          .cont-col1
+                            .label.label-sm.label-success
+                              i.fa.fa-bell-o
+                          .cont-col2
+                            .desc  New order received
+                      .col2
+                        .date  10 mins
+                  li
+                    .col1
+                      .cont
+                        .cont-col1
+                          .label.label-sm.label-danger
+                            i.fa.fa-bolt
+                        .cont-col2
+                          .desc
+                            | Order #24DOP4 has been rejected.
+                            span.label.label-sm.label-danger
+                              | Take action
+                              i.fa.fa-share
+                    .col2
+                      .date  24 mins
+                  li
+                    a(href='javascript:;')
+                      .col1
+                        .cont
+                          .cont-col1
+                            .label.label-sm.label-success
+                              i.fa.fa-bell-o
+                          .cont-col2
+                            .desc  New user registered
+                      .col2
+                        .date  Just now
+                  li
+                    a(href='javascript:;')
+                      .col1
+                        .cont
+                          .cont-col1
+                            .label.label-sm.label-success
+                              i.fa.fa-bell-o
+                          .cont-col2
+                            .desc  New user registered
+                      .col2
+                        .date  Just now
+                  li
+                    a(href='javascript:;')
+                      .col1
+                        .cont
+                          .cont-col1
+                            .label.label-sm.label-success
+                              i.fa.fa-bell-o
+                          .cont-col2
+                            .desc  New user registered
+                      .col2
+                        .date  Just now
+                  li
+                    a(href='javascript:;')
+                      .col1
+                        .cont
+                          .cont-col1
+                            .label.label-sm.label-success
+                              i.fa.fa-bell-o
+                          .cont-col2
+                            .desc  New user registered
+                      .col2
+                        .date  Just now
+                  li
+                    a(href='javascript:;')
+                      .col1
+                        .cont
+                          .cont-col1
+                            .label.label-sm.label-success
+                              i.fa.fa-bell-o
+                          .cont-col2
+                            .desc  New user registered
+                      .col2
+                        .date  Just now
+                  li
+                    a(href='javascript:;')
+                      .col1
+                        .cont
+                          .cont-col1
+                            .label.label-sm.label-success
+                              i.fa.fa-bell-o
+                          .cont-col2
+                            .desc  New user registered
+                      .col2
+                        .date  Just now
+                  li
+                    a(href='javascript:;')
+                      .col1
+                        .cont
+                          .cont-col1
+                            .label.label-sm.label-success
+                              i.fa.fa-bell-o
+                          .cont-col2
+                            .desc  New user registered
+                      .col2
+                        .date  Just now
+          // END TABS
+      // END PORTLET
+  .row
+    .col-lg-6.col-xs-12.col-sm-12
+      // BEGIN PORTLET
+      .portlet.light.calendar.bordered
+        .portlet-title
+          .caption
+            i.icon-calendar.font-dark.hide
+            span.caption-subject.font-dark.bold.uppercase Feeds
+        .portlet-body
+          #calendar
+      // END PORTLET
+    .col-lg-6.col-xs-12.col-sm-12
+      // BEGIN PORTLET
+      .portlet.light.bordered
+        .portlet-title
+          .caption
+            i.icon-bubble.font-hide.hide
+            span.caption-subject.font-hide.bold.uppercase Chats
+          .actions
+            .portlet-input.input-inline
+              .input-icon.right
+                i.icon-magnifier
+                input.form-control.input-circle(type='text', placeholder='search...')
+        #chats.portlet-body
+          .scroller(style='height: 525px;', data-always-visible='1', data-rail-visible1='1')
+            ul.chats
+              li.out
+                img.avatar(alt='', src='img/layouts/layout/img/avatar2.jpg')
+                .message
+                  span.arrow
+                  a.name(href='javascript:;')  Lisa Wong
+                  span.datetime  at 20:11
+                  span.body
+                    | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              li.out
+                img.avatar(alt='', src='img/layouts/layout/img/avatar2.jpg')
+                .message
+                  span.arrow
+                  a.name(href='javascript:;')  Lisa Wong
+                  span.datetime  at 20:11
+                  span.body
+                    | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              li.in
+                img.avatar(alt='', src='img/layouts/layout/img/avatar1.jpg')
+                .message
+                  span.arrow
+                  a.name(href='javascript:;')  Bob Nilson
+                  span.datetime  at 20:30
+                  span.body
+                    | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              li.in
+                img.avatar(alt='', src='img/layouts/layout/img/avatar1.jpg')
+                .message
+                  span.arrow
+                  a.name(href='javascript:;')  Bob Nilson
+                  span.datetime  at 20:30
+                  span.body
+                    | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              li.out
+                img.avatar(alt='', src='img/layouts/layout/img/avatar3.jpg')
+                .message
+                  span.arrow
+                  a.name(href='javascript:;')  Richard Doe
+                  span.datetime  at 20:33
+                  span.body
+                    | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              li.in
+                img.avatar(alt='', src='img/layouts/layout/img/avatar3.jpg')
+                .message
+                  span.arrow
+                  a.name(href='javascript:;')  Richard Doe
+                  span.datetime  at 20:35
+                  span.body
+                    | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              li.out
+                img.avatar(alt='', src='img/layouts/layout/img/avatar1.jpg')
+                .message
+                  span.arrow
+                  a.name(href='javascript:;')  Bob Nilson
+                  span.datetime  at 20:40
+                  span.body
+                    | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              li.in
+                img.avatar(alt='', src='img/layouts/layout/img/avatar3.jpg')
+                .message
+                  span.arrow
+                  a.name(href='javascript:;')  Richard Doe
+                  span.datetime  at 20:40
+                  span.body
+                    | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              li.out
+                img.avatar(alt='', src='img/layouts/layout/img/avatar1.jpg')
+                .message
+                  span.arrow
+                  a.name(href='javascript:;')  Bob Nilson
+                  span.datetime  at 20:54
+                  span.body
+                    | Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. sed diam nonummy nibh euismod tincidunt ut laoreet.
+          .chat-form
+            .input-cont
+              input.form-control(type='text', placeholder='Type a message here...')
+            .btn-cont
+              span.arrow
+              a.btn.blue.icn-only(href='')
+                i.fa.fa-check.icon-white
+      // END PORTLET
+  .row
+    .col-lg-6.col-xs-12.col-sm-12
+      .portlet.light.bordered
+        .portlet-title
+          .caption
+            i.icon-bubble.font-dark.hide
+            span.caption-subject.font-hide.bold.uppercase Recent Users
+          .actions
+            .btn-group
+              a.btn.green-haze.btn-outline.btn-circle.btn-sm(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                | Actions
+                i.fa.fa-angle-down
+              ul.dropdown-menu.pull-right
+                li
+                  a(href='javascript:;')  Option 1
+                li.divider
+                li
+                  a(href='javascript:;') Option 2
+                li
+                  a(href='javascript:;') Option 3
+                li
+                  a(href='javascript:;') Option 4
+        .portlet-body
+          .row
+            .col-md-4
+              // begin: widget 1-1
+              .mt-widget-1
+                .mt-icon
+                  a(href='#')
+                    i.icon-plus
+                .mt-img
+                  img(src='img/pages/media/users/avatar80_8.jpg')
+                .mt-body
+                  h3.mt-username Diana Ellison
+                  p.mt-user-title  Lorem Ipsum is simply dummy text.
+                  .mt-stats
+                    .btn-group.btn-group.btn-group-justified
+                      a.btn.font-red(href='javascript:;')
+                        i.icon-bubbles
+                        |  1,7k
+                      a.btn.font-green(href='javascript:;')
+                        i.icon-social-twitter
+                        |  2,6k
+                      a.btn.font-yellow(href='javascript:;')
+                        i.icon-emoticon-smile
+                        |  3,7k
+              // end: widget 1-1
+            .col-md-4
+              // begin: widget 1-2
+              .mt-widget-1
+                .mt-icon
+                  a(href='#')
+                    i.icon-plus
+                .mt-img
+                  img(src='img/pages/media/users/avatar80_7.jpg')
+                .mt-body
+                  h3.mt-username Jason Baker
+                  p.mt-user-title  Lorem Ipsum is simply dummy text.
+                  .mt-stats
+                    .btn-group.btn-group.btn-group-justified
+                      a.btn.font-yellow(href='javascript:;')
+                        i.icon-bubbles
+                        |  1,7k
+                      a.btn.font-blue(href='javascript:;')
+                        i.icon-social-twitter
+                        |  2,6k
+                      a.btn.font-green(href='javascript:;')
+                        i.icon-emoticon-smile
+                        |  3,7k
+              // end: widget 1-2
+            .col-md-4
+              // begin: widget 1-3
+              .mt-widget-1
+                .mt-icon
+                  a(href='#')
+                    i.icon-plus
+                .mt-img
+                  img(src='img/pages/media/users/avatar80_6.jpg')
+                .mt-body
+                  h3.mt-username Julia Berry
+                  p.mt-user-title  Lorem Ipsum is simply dummy text.
+                  .mt-stats
+                    .btn-group.btn-group.btn-group-justified
+                      a.btn.font-yellow(href='javascript:;')
+                        i.icon-bubbles
+                        |  1,7k
+                      a.btn.font-red(href='javascript:;')
+                        i.icon-social-twitter
+                        |  2,6k
+                      a.btn.font-green(href='javascript:;')
+                        i.icon-emoticon-smile
+                        |  3,7k
+              // end: widget 1-3
+      .portlet.light.portlet-fit.bordered
+        .portlet-title
+          .caption
+            i.icon-microphone.font-dark.hide
+            span.caption-subject.bold.font-dark.uppercase  Recent Works
+            span.caption-helper  default option...
+          .actions
+            .btn-group.btn-group-devided(data-toggle='buttons')
+              label.btn.red.btn-outline.btn-circle.btn-sm.active
+                input#option1.toggle(type='radio', name='options')
+                | Settings
+              label.btn.red.btn-outline.btn-circle.btn-sm
+                input#option2.toggle(type='radio', name='options')
+                | Tools
+        .portlet-body
+          .row
+            .col-md-6
+              .mt-widget-2
+                .mt-head(style='background-image: url(img/pages/img/background/32.jpg);')
+                  .mt-head-label
+                    button.btn.btn-success(type='button') Manhattan
+                  .mt-head-user
+                    .mt-head-user-img
+                      img(src='img/pages/img/avatars/team7.jpg')
+                    .mt-head-user-info
+                      span.mt-user-name Chris Jagers
+                      span.mt-user-time
+                        i.icon-emoticon-smile
+                        |  3 mins ago
+                .mt-body
+                  h3.mt-body-title  Thomas Clark
+                  p.mt-body-description  It is a long established fact that a reader will be distracted
+                  ul.mt-body-stats
+                    li.font-green
+                      i.icon-emoticon-smile
+                      |  3,7k
+                    li.font-yellow
+                      i.icon-social-twitter
+                      |  3,7k
+                    li.font-red
+                      i.icon-bubbles
+                      |  3,7k
+                  .mt-body-actions
+                    .btn-group.btn-group.btn-group-justified
+                      a.btn(href='javascript:;')
+                        i.icon-bubbles
+                        |  Bookmark
+                      a.btn(href='javascript:;')
+                        i.icon-social-twitter
+                        |  Share
+            .col-md-6
+              .mt-widget-2
+                .mt-head(style='background-image: url(img/pages/img/background/43.jpg);')
+                  .mt-head-label
+                    button.btn.btn-danger(type='button') London
+                  .mt-head-user
+                    .mt-head-user-img
+                      img(src='img/pages/img/avatars/team3.jpg')
+                    .mt-head-user-info
+                      span.mt-user-name Harry Harris
+                      span.mt-user-time
+                        i.icon-user
+                        |  3 mins ago
+                .mt-body
+                  h3.mt-body-title  Christian Davidson
+                  p.mt-body-description  It is a long established fact that a reader will be distracted
+                  ul.mt-body-stats
+                    li.font-green
+                      i.icon-emoticon-smile
+                      |  3,7k
+                    li.font-yellow
+                      i.icon-social-twitter
+                      |  3,7k
+                    li.font-red
+                      i.icon-bubbles
+                      |  3,7k
+                  .mt-body-actions
+                    .btn-group.btn-group.btn-group-justified
+                      a.btn(href='javascript:;')
+                        i.icon-bubbles
+                        |  Bookmark
+                      a.btn(href='javascript:;')
+                        i.icon-social-twitter
+                        |  Share
+    .col-lg-6.col-xs-12.col-sm-12
+      .portlet.light.portlet-fit.bordered
+        .portlet-title
+          .caption
+            i.icon-microphone.font-dark.hide
+            span.caption-subject.bold.font-dark.uppercase  Recent Projects
+            span.caption-helper  default option...
+          .actions
+            .btn-group.btn-group-devided(data-toggle='buttons')
+              label.btn.blue.btn-outline.btn-circle.btn-sm.active
+                input#option1.toggle(type='radio', name='options')
+                | Actions
+              label.btn.blue.btn-outline.btn-circle.btn-sm
+                input#option2.toggle(type='radio', name='options')
+                | Tools
+        .portlet-body
+          .row
+            .col-md-4
+              .mt-widget-4
+                .mt-img-container
+                  img(src='img/pages/img/background/34.jpg')
+                .mt-container.bg-purple-opacity
+                  .mt-head-title  Website Revamp & Deployment
+                  .mt-body-icons
+                    a(href='#')
+                      i.icon-pencil
+                    a(href='#')
+                      i.icon-map
+                    a(href='#')
+                      i.icon-trash
+                  .mt-footer-button
+                    button.btn.btn-circle.btn-danger.btn-sm(type='button') Dior
+            .col-md-4
+              .mt-widget-4
+                .mt-img-container
+                  img(src='img/pages/img/background/46.jpg')
+                .mt-container.bg-green-opacity
+                  .mt-head-title  CRM Development & Deployment
+                  .mt-body-icons
+                    a(href='#')
+                      i.icon-social-twitter
+                    a(href='#')
+                      i.icon-bubbles
+                    a(href='#')
+                      i.icon-bell
+                  .mt-footer-button
+                    button.btn.btn-circle.blue-ebonyclay.btn-sm(type='button') Nike
+            .col-md-4
+              .mt-widget-4
+                .mt-img-container
+                  img(src='img/pages/img/background/37.jpg')
+                .mt-container.bg-dark-opacity
+                  .mt-head-title  Marketing Campaigns
+                  .mt-body-icons
+                    a(href='#')
+                      i.icon-bubbles
+                    a(href='#')
+                      i.icon-map
+                    a(href='#')
+                      i.icon-cup
+                  .mt-footer-button
+                    button.btn.btn-circle.btn-success.btn-sm(type='button') Honda
+      .portlet.light.portlet-fit.bordered
+        .portlet-title
+          .caption
+            i.icon-microphone.font-dark.hide
+            span.caption-subject.bold.font-dark.uppercase  Activities
+            span.caption-helper  default option...
+          .actions
+            .btn-group
+              a.btn.red.btn-outline.btn-circle.btn-sm(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                | Actions
+                i.fa.fa-angle-down
+              ul.dropdown-menu.pull-right
+                li
+                  a(href='javascript:;')  Option 1
+                li.divider
+                li
+                  a(href='javascript:;') Option 2
+                li
+                  a(href='javascript:;') Option 3
+                li
+                  a(href='javascript:;') Option 4
+        .portlet-body
+          .row
+            .col-md-4
+              .mt-widget-3
+                .mt-head.bg-blue-hoki
+                  .mt-head-icon
+                    i.icon-social-twitter
+                  .mt-head-desc  Lorem Ipsum is simply dummy text of the ...
+                  span.mt-head-date  25 Jan, 2015
+                  .mt-head-button
+                    button.btn.btn-circle.btn-outline.white.btn-sm(type='button') Add
+                .mt-body-actions-icons
+                  .btn-group.btn-group.btn-group-justified
+                    a.btn(href='javascript:;')
+                      span.mt-icon
+                        i.glyphicon.glyphicon-align-justify
+                      | RECORD
+                    a.btn(href='javascript:;')
+                      span.mt-icon
+                        i.glyphicon.glyphicon-camera
+                      | PHOTO
+                    a.btn(href='javascript:;')
+                      span.mt-icon
+                        i.glyphicon.glyphicon-calendar
+                      | DATE
+                    a.btn(href='javascript:;')
+                      span.mt-icon
+                        i.glyphicon.glyphicon-record
+                      | RANC
+            .col-md-4
+              .mt-widget-3
+                .mt-head.bg-red
+                  .mt-head-icon
+                    i.icon-user
+                  .mt-head-desc  Lorem Ipsum is simply dummy text of the ...
+                  span.mt-head-date  12 Feb, 2016
+                  .mt-head-button
+                    button.btn.btn-circle.btn-outline.white.btn-sm(type='button') Add
+                .mt-body-actions-icons
+                  .btn-group.btn-group.btn-group-justified
+                    a.btn(href='javascript:;')
+                      span.mt-icon
+                        i.glyphicon.glyphicon-align-justify
+                      | RECORD
+                    a.btn(href='javascript:;')
+                      span.mt-icon
+                        i.glyphicon.glyphicon-camera
+                      | PHOTO
+                    a.btn(href='javascript:;')
+                      span.mt-icon
+                        i.glyphicon.glyphicon-calendar
+                      | DATE
+                    a.btn(href='javascript:;')
+                      span.mt-icon
+                        i.glyphicon.glyphicon-record
+                      | RANC
+            .col-md-4
+              .mt-widget-3
+                .mt-head.bg-green
+                  .mt-head-icon
+                    i.icon-graduation
+                  .mt-head-desc  Lorem Ipsum is simply dummy text of the ...
+                  span.mt-head-date  3 Mar, 2015
+                  .mt-head-button
+                    button.btn.btn-circle.btn-outline.white.btn-sm(type='button') Add
+                .mt-body-actions-icons
+                  .btn-group.btn-group.btn-group-justified
+                    a.btn(href='javascript:;')
+                      span.mt-icon
+                        i.glyphicon.glyphicon-align-justify
+                      | RECORD
+                    a.btn(href='javascript:;')
+                      span.mt-icon
+                        i.glyphicon.glyphicon-camera
+                      | PHOTO
+                    a.btn(href='javascript:;')
+                      span.mt-icon
+                        i.glyphicon.glyphicon-calendar
+                      | DATE
+                    a.btn(href='javascript:;')
+                      span.mt-icon
+                        i.glyphicon.glyphicon-record
+                      | RANC

@@ -1,0 +1,16 @@
+extends ../layouts/default
+
+block content
+	h2= concesionario.nombre
+	p= concesionario.nombreCorto
+	p= concesionario.marca
+	p= concesionario.diaCierre
+	p= concesionario.supervisor
+	p= concesionario.vendedores
+
+	form(action="/concesionarios/"+concesionario.id, method="post", onsubmit="return confirm('Estas seguro?')")
+		input(type='hidden', name='_csrf', value="#{csrf_token}")
+		a.btn.btn-default(href='/concesionarios/'+concesionario._id+'/edit', title="edit") Edit
+		| &nbsp;
+		input(type="hidden", name="_method", value="DELETE")
+		button.btn.btn-danger(type="submit") Delete

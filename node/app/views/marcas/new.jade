@@ -1,0 +1,37 @@
+extends ../layouts/default
+
+block content
+	- var action = '/marcas'
+	- action += marca.isNew? '' : '/' + marca.id
+
+	h2.text-center Nueva marca
+
+	form.form-horizontal(method="post", action=action)
+		input(type="hidden", name="_csrf", value="#{csrf_token}")
+		- if (!marca.isNew)
+			input(type="hidden", name="_method", value="PUT")
+
+		.row
+			.col-lg-6
+				.form-group
+					label.control-label.col-sm-3(for="nombre") Nombre*
+					.col-sm-9
+						input.form-control#nombre(type="text", name="nombre")
+
+				.form-group
+					label.control-label.col-sm-3(for="videoUrl") Video URL
+					.col-sm-9
+						input.form-control#videoUrl(type="text", name="videoUrl")
+
+				.form-group
+					label.control-label.col-sm-3(for="activo") Activo
+					.col-sm-9
+						input.form-control#activo(type="checkbox", name="activo")
+
+				.form-group
+					label.control-label.col-sm-3(for="nombrePlan") Nombre Plan*
+					.col-sm-9
+						input.form-control#nombrePlan(type="text", name="nombrePlan")
+
+				.form-group.text-center
+					button.btn.btn-primary(type="submit") Crear

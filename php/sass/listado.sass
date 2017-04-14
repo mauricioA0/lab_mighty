@@ -1,0 +1,227 @@
+
+
+$gris: #f2f2f2
+$seis: #666666
+$azulLindo: #0091EA
+/* Listado */
+
+#ul-nav-listado
+	padding: 0px
+	margin-top: 10px
+	li
+		float: left
+		margin-top: .5em
+		margin-right: 5px
+
+
+#modelosListado
+	h1
+		font-size: 25px !important
+	ul
+		padding: 0px
+		margin-top: 40px
+		overflow: hidden
+		li
+			.grid-item-content
+				overflow: hidden
+				margin-bottom: 30px
+
+.img-container
+	background-color: $gris
+	padding: 20px 10px
+	margin-top: 20px
+
+#item-content-info
+	padding: 0px
+	.tPlan, .nPlan
+		font-size: 12px
+		color: $seis
+		line-height: 10px
+	.nombreList
+		color: $seis
+		margin-top: 10px
+		font-size: 12px
+		font-weight: 900
+		padding-bottom: 10px
+		border-bottom: 1px solid $gris
+
+aside
+	padding: 0
+	&#columnasMarca
+		padding: 0px
+		background-color: $gris
+		overflow: hidden
+		max-width: 292.5px
+		
+	section
+		&.nav-aside
+			margin-top: 20px
+.hover-item
+	position: absolute
+	background-color: #fff
+	top: 220px
+	left: 0
+	bottom: 0
+	right: 0
+	z-index: 999
+	overflow: hidden
+	display: none
+
+.grid-item-content
+	&:hover
+		.hover-item	
+			display: block
+		.inner-hover
+			//margin: 0px 15px
+			padding: 0px 15px
+			//border: 1px solid $gris
+
+.inner-hover 
+
+
+	.nombreList
+		color: $azulLindo
+		font-weight: 900
+		font-size: 12px
+	//line-height: 10px	
+.tEntrega
+	font-size: 12px
+	color: $seis
+li.itemLiModelosMarca
+	border: 1px solid #fff
+	min-height: 392px
+
+#item-price
+	padding: 0px
+	.cd
+		padding: 0px
+		line-height: 2.5em
+		color: $seis
+
+.cuotaPlan
+	font-size: 30px
+	color: $azulLindo
+
+.border
+	border: 1px solid #ccc !important
+	zoom: 1
+	z-index: 5
+
+.plan
+	padding: 5px 10px
+	color: white
+	width: 100%
+	margin-bottom: 10px
+	p
+		padding: 0
+		margin-bottom: 0
+
+.plan-setenta
+	background-color: #2db069
+.plan-cien
+	background-color: #9DCB42
+.plan-setentacinco
+	background-color: #2db069
+.plan-sesenta
+	background-color: #2E7D32
+
+#categorias, #tipodePlan, #valor, #marcas
+	padding: 10px 20px
+	line-height: 3em
+	color: $seis
+	border-bottom: 1px solid #ccc
+	cursor: pointer
+	ul
+		padding: 0
+		li
+			font-size: 14px
+			text-transform: capitalize
+			padding-left: 15px
+
+.nuevoModelo
+	position: absolute
+	right: 10px
+	width: 50px
+	height: 50px
+	border-radius: 50%
+	text-align: center
+	font-size: 12px
+	background-color: $azulLindo
+	color: white
+	z-index: 9999
+	line-height: 4em
+#tipodePlan
+	border-top: 1px solid #ccc
+#categorias h3, #tipodePlan h3,  #valor h3, #marcas h3
+	color: #323232
+	line-height: 1
+	font-size: 15px
+
+.item-activo
+	background-color: #323232
+	color: $gris
+ul 
+	&#listado
+		h1
+			margin-left: 20px
+			font-size: 25px
+
+/* Aside  */
+
+.nav-aside
+	p
+		padding: 25px 0 0 25px
+		color: $seis
+aside.fijo
+	position: fixed
+.filter
+	padding: 0px !important
+
+ul
+	&.seleccion
+		float: right
+		li
+			float: left
+			margin-right: 15px
+			cursor: pointer
+			&.item-seleccion i
+				padding: 4px
+				background-color: #2c3e50 
+				color: #ffffff
+				border-radius: 5px
+				margin-top: 5px
+
+/* filtrosbreadcrumb */				
+#filtrosbreadcrumb
+	margin-top: 30px
+	background-color: #FFFFFF !important
+	border: 1px solid $gris
+	
+	p.left
+		line-height: 2.5em
+		margin-bottom: 0px
+
+span.marcaListadoBread
+	text-transform: capitalize
+
+
+.cambiar
+	margin-top: .5em
+
+.margin-r
+	margin-left: 15px
+
+/* estrellas Listado */
+.estrellasVotacion, #estrellasVotos
+	padding: 0px !important
+.fa-star, .fa-star-half-o, .fa-star-o
+	color: #F8AA27
+
+.like-listado
+	color: #abbbbb
+@import 'resultados.sass'
+a.wats
+	@media (max-width:768px)
+		display: block !important
+
+

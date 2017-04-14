@@ -1,0 +1,23 @@
+extends ../layouts/default
+
+block content
+	span.text-center
+		h2 Opciones 
+
+	form
+		.col-lg-12
+			.col-lg-3
+				p
+					label(for="claveactual") Cambiar clave
+		.col-lg-12
+			.form-group.col-lg-3
+				input#claveactual.form-control(type="password", placeholder="Clave nueva")
+
+			.form-group.col-lg-3
+				input#nuevaclave.form-control(type="password", placeholder="Nueva clave")
+
+			.form-group.col-lg-3
+				input#repetirnuevaclave.form-control(type="password", placeholder="Repetir nueva clave")
+
+			.form-group.col-lg-3
+				button.btn.btn-primary(type="submit") Cambiar clave
